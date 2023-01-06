@@ -2,7 +2,10 @@
 	"files.exclude": {
 		".godot": true,
 		"**/*.godot": true,
-		"**/*.import": true
+		"**/*.import": true,
+	},
+	"files.associations": {
+		"*.gdignore": "ignore",
 	},
 	"editor.insertSpaces": false,
 }
