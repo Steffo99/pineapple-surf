@@ -12,17 +12,17 @@ _global_script_classes=[{
 "base": "Node",
 "class": &"BaseWeapon",
 "language": &"GDScript",
-"path": "res://Player/BaseWeapon.gd"
+"path": "res://player/BaseWeapon.gd"
 }, {
 "base": "CharacterBody3D",
 "class": &"Player",
 "language": &"GDScript",
-"path": "res://Player/player.gd"
+"path": "res://player/player.gd"
 }, {
 "base": "Object",
 "class": &"PlayerInputData",
 "language": &"GDScript",
-"path": "res://Player/PlayerInputData.gd"
+"path": "res://player/PlayerInputData.gd"
 }]
 _global_script_class_icons={
 "BaseWeapon": "",
