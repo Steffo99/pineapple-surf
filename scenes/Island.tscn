@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bn28lisdw1nuo"]
+
+[ext_resource type="Texture2D" uid="uid://bdoifsf6k0qb8" path="res://assets/water_tex.png" id="1_w6ara"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i4xeb"]
+shading_mode = 0
+specular_mode = 1
+albedo_texture = ExtResource("1_w6ara")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv2_triplanar = true
+texture_filter = 0
+proximity_fade_distance = 30.89
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4ibso"]
+material = SubResource("StandardMaterial3D_i4xeb")
+size = Vector2(1000, 1000)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_htlhh"]
+sky_top_color = Color(0.356863, 0.623529, 0.937255, 1)
+sky_horizon_color = Color(0.254902, 0.623529, 0.8, 1)
+ground_bottom_color = Color(0.254902, 0.623529, 0.8, 1)
+ground_horizon_color = Color(0.254902, 0.623529, 0.8, 1)
+ground_curve = 7.89838
+
+[sub_resource type="Sky" id="Sky_j6hso"]
+sky_material = SubResource("ProceduralSkyMaterial_htlhh")
+
+[sub_resource type="Environment" id="Environment_302o8"]
+background_mode = 2
+sky = SubResource("Sky_j6hso")
+
+[node name="Island" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_4ibso")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_302o8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.337161, 0.941447, 0, -0.941447, -0.337161, 0, 2.08989, 0)
