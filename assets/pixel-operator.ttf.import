@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c5jc4577wxwjb"
-path="res://.godot/imported/monogram.ttf-8310b04578b3a035dcf82be9c901f1f9.fontdata"
+uid="uid://0a45xjjn77ym"
+path="res://.godot/imported/pixel-operator.ttf-7dca05f861a9e35aa541a83a53d92665.fontdata"
 
 [deps]
 
-source_file="res://assets/monogram.ttf"
-dest_files=["res://.godot/imported/monogram.ttf-8310b04578b3a035dcf82be9c901f1f9.fontdata"]
+source_file="res://assets/pixel-operator.ttf"
+dest_files=["res://.godot/imported/pixel-operator.ttf-7dca05f861a9e35aa541a83a53d92665.fontdata"]
 
 [params]
 
