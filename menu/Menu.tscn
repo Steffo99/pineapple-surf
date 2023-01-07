@@ -1,67 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bufi0wh54u5x5"]
+[gd_scene load_steps=3 format=3 uid="uid://bufi0wh54u5x5"]
 
-[ext_resource type="FontFile" uid="uid://dvfq5l72ynw4s" path="res://assets/pixel_operator.ttf" id="1_t4wyx"]
+[ext_resource type="Theme" uid="uid://c5a1nyqumj46j" path="res://menu/menu_theme.tres" id="1_mkxnc"]
 [ext_resource type="Texture2D" uid="uid://bxyximtgui1ux" path="res://assets/grass_menu_tile.png" id="2_q14jx"]
-
-[sub_resource type="FontVariation" id="FontVariation_srw5c"]
-base_font = ExtResource("1_t4wyx")
-variation_embolden = 0.01
-spacing_bottom = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqq4b"]
-bg_color = Color(0.670588, 0.317647, 0.188235, 0.627451)
-border_color = Color(0.670588, 0.317647, 0.188235, 0.627451)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-corner_detail = 2
-shadow_color = Color(0, 0, 0, 1)
-anti_aliasing = false
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t0r2r"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_msefr"]
-bg_color = Color(0.388235, 0.670588, 0.247059, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-corner_detail = 2
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1gp3"]
-bg_color = Color(0.156863, 0.207843, 0.25098, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-corner_detail = 2
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmx50"]
-bg_color = Color(0.388235, 0.670588, 0.247059, 1)
-border_color = Color(0.388235, 0.670588, 0.247059, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-corner_detail = 2
-shadow_color = Color(1, 1, 1, 1)
-anti_aliasing = false
-
-[sub_resource type="Theme" id="Theme_fanch"]
-Button/font_sizes/font_size = 16
-Button/fonts/font = SubResource("FontVariation_srw5c")
-Button/styles/disabled = SubResource("StyleBoxFlat_cqq4b")
-Button/styles/focus = SubResource("StyleBoxEmpty_t0r2r")
-Button/styles/hover = SubResource("StyleBoxFlat_msefr")
-Button/styles/normal = SubResource("StyleBoxFlat_o1gp3")
-Button/styles/pressed = SubResource("StyleBoxFlat_xmx50")
-Label/colors/font_color = Color(1, 1, 1, 1)
-Label/constants/line_spacing = 2
-Label/font_sizes/font_size = 16
-Label/fonts/font = ExtResource("1_t4wyx")
 
 [node name="Menu" type="Control"]
 texture_filter = 1
@@ -72,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme = SubResource("Theme_fanch")
+theme = ExtResource("1_mkxnc")
 
 [node name="Panel" type="TextureRect" parent="."]
 layout_mode = 1
