@@ -1,0 +1,300 @@
+[gd_scene load_steps=17 format=3 uid="uid://dnrl0uycbw3lp"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_rujcr"]
+[ext_resource type="Script" path="res://Player/Head.gd" id="2_fs52a"]
+[ext_resource type="Script" path="res://Player/OnHand.gd" id="3_au30p"]
+[ext_resource type="Shader" path="res://Player/crosshair.gdshader" id="6_r7xbu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_berhm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7lbaj"]
+material = SubResource("StandardMaterial3D_berhm")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqp8x"]
+metallic_specular = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_h7ca4"]
+material = SubResource("StandardMaterial3D_aqp8x")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_otair"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqko1"]
+bg_color = Color(0.240234, 0.240234, 0.240234, 1)
+
+[sub_resource type="Theme" id="Theme_smyke"]
+Panel/styles/panel = SubResource("StyleBoxFlat_vqko1")
+
+[sub_resource type="GDScript" id="GDScript_iiadi"]
+resource_name = "FPS_Counter"
+script/source = "extends Label
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	self.text = str(round(1/delta)) + \" FPS\"
+"
+
+[sub_resource type="GDScript" id="GDScript_5d122"]
+resource_name = "PointsSpawner"
+script/source = "extends Control
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func spawn_points_label(text: String, offset: Vector2):
+	var label = Label.new()
+	label.text = text
+	label.offset_bottom = -offset.y
+	label.offset_left = offset.x
+	self.add_child(label)
+	
+	var initialY = label.position.y
+	
+	var tween = get_tree().create_tween()
+	tween.set_speed_scale(2)
+	tween.parallel().tween_property(label, \"position:y\", initialY - 50, 1).as_relative().from_current().set_trans(Tween.EASE_OUT)
+	tween.parallel().tween_property(label, \"modulate\", Color.TRANSPARENT, 1).set_trans(Tween.EASE_OUT)
+	tween.tween_callback(label.queue_free)
+	tween.play()
+
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avmet"]
+bg_color = Color(0, 0, 0, 0.647059)
+
+[sub_resource type="GDScript" id="GDScript_7qy62"]
+script/source = "extends Camera3D
+
+@export var MainCamera: Camera3D
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if not MainCamera:
+		return
+	
+	if MainCamera.global_position:
+		self.global_position = MainCamera.global_position
+	if MainCamera.global_rotation:
+		self.global_rotation = MainCamera.global_rotation
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2p6rt"]
+shader = ExtResource("6_r7xbu")
+shader_parameter/center_enabled = false
+shader_parameter/legs_enabled = true
+shader_parameter/inverted = false
+shader_parameter/color_id = null
+shader_parameter/color_0 = null
+shader_parameter/color_1 = null
+shader_parameter/color_2 = null
+shader_parameter/center_radius = 0.002
+shader_parameter/width = 0.001
+shader_parameter/len = 0.008
+shader_parameter/spacing = 0.006
+shader_parameter/spread = 0.902
+
+[node name="Player" type="CharacterBody3D"]
+slide_on_ceiling = false
+floor_constant_speed = true
+script = ExtResource("1_rujcr")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54, 0)
+script = ExtResource("2_fs52a")
+
+[node name="Torch" type="SpotLight3D" parent="Head"]
+visible = false
+light_energy = 5.5
+light_indirect_energy = 2.0
+light_cull_mask = 4294967293
+shadow_enabled = true
+spot_range = 28.8
+spot_angle = 23.1165
+spot_angle_attenuation = 0.466516
+
+[node name="RayCast3D" type="RayCast3D" parent="Head"]
+target_position = Vector3(0, 0, -1.4)
+
+[node name="OnHand" type="Node3D" parent="Head"]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0)
+script = ExtResource("3_au30p")
+
+[node name="Viewport" type="Control" parent="Head"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CameraViewportContainer" type="SubViewportContainer" parent="Head/Viewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="GameViewport" type="SubViewport" parent="Head/Viewport/CameraViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(284, 160)
+render_target_update_mode = 4
+
+[node name="Camera" type="Camera3D" parent="Head/Viewport/CameraViewportContainer/GameViewport"]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0.54, 0)
+current = true
+fov = 80.0
+near = 0.001
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Viewport/CameraViewportContainer/GameViewport/Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.13668e-07, 0, -2.3659)
+visible = false
+layers = 3
+mesh = SubResource("BoxMesh_7lbaj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_h7ca4")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_otair")
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_smyke")
+
+[node name="FPS_Label" type="Label" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -97.0
+offset_bottom = 32.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "n/d FPS"
+horizontal_alignment = 2
+script = SubResource("GDScript_iiadi")
+
+[node name="PointsSpawner" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_5d122")
+
+[node name="Speed_Label" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = 36.0
+offset_right = 53.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="HUD"]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -276.0
+offset_top = -122.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_avmet")
+
+[node name="ColorRect" type="ColorRect" parent="HUD/Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.745098)
+
+[node name="BackBufferCopy2" type="BackBufferCopy" parent="HUD"]
+position = Vector2(727, 447)
+scale = Vector2(7.61, 4.89)
+copy_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HUD"]
+visible = false
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="HUD/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(284, 160)
+render_target_update_mode = 0
+
+[node name="WeaponCamera" type="Camera3D" parent="HUD/SubViewportContainer/SubViewport" node_paths=PackedStringArray("MainCamera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.581502, 0)
+cull_mask = 2
+near = 0.001
+script = SubResource("GDScript_7qy62")
+MainCamera = NodePath("../../../../Head/Viewport/CameraViewportContainer/GameViewport/Camera")
+
+[node name="Crosshair" type="ColorRect" parent="HUD"]
+material = SubResource("ShaderMaterial_2p6rt")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="HUD"]
+y_sort_enabled = true
+position = Vector2(721, 449)
+scale = Vector2(7.21, 4.54)
+
+[node name="GameFilter" type="ColorRect" parent="HUD"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_layout_mode = 1
+
+[node name="RigidDynamicBody3D" type="RigidBody3D" parent="."]

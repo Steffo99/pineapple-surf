@@ -8,6 +8,28 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Node",
+"class": &"BaseWeapon",
+"language": &"GDScript",
+"path": "res://player/BaseWeapon.gd"
+}, {
+"base": "CharacterBody3D",
+"class": &"Player",
+"language": &"GDScript",
+"path": "res://player/player.gd"
+}, {
+"base": "Object",
+"class": &"PlayerInputData",
+"language": &"GDScript",
+"path": "res://player/PlayerInputData.gd"
+}]
+_global_script_class_icons={
+"BaseWeapon": "",
+"Player": "",
+"PlayerInputData": ""
+}
+
 [application]
 
 config/name="LD52"
@@ -20,13 +42,41 @@ config/icon="res://assets/icon.svg"
 
 window/size/viewport_width=284
 window/size/viewport_height=160
+window/size/mode=2
 window/stretch/mode="canvas_items"
 
 [gui]
 
 fonts/dynamic_fonts/use_oversampling=false
 
+[input]
+
+forward={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"unicode":0,"echo":false,"script":null)
+]
+}
+backwards={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"unicode":0,"echo":false,"script":null)
+]
+}
+left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"unicode":0,"echo":false,"script":null)
+]
+}
+right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"unicode":0,"echo":false,"script":null)
+]
+}
+jump={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"unicode":0,"echo":false,"script":null)
+]
+}
+
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.231373, 0.490196, 0.309804, 1)
