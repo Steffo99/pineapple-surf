@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dnrl0uycbw3lp"]
+[gd_scene load_steps=16 format=3 uid="uid://dnrl0uycbw3lp"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_rujcr"]
 [ext_resource type="Script" path="res://player/Head.gd" id="2_ohlgu"]
@@ -68,9 +68,6 @@ func spawn_points_label(text: String, offset: Vector2):
 
 "
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avmet"]
-bg_color = Color(0, 0, 0, 0.647059)
-
 [sub_resource type="GDScript" id="GDScript_7qy62"]
 script/source = "extends Camera3D
 
@@ -97,11 +94,11 @@ shader = ExtResource("4_dut1p")
 shader_parameter/center_enabled = false
 shader_parameter/legs_enabled = true
 shader_parameter/inverted = false
-shader_parameter/color_id = null
-shader_parameter/color_0 = null
-shader_parameter/color_1 = null
-shader_parameter/color_2 = null
-shader_parameter/center_radius = 0.002
+shader_parameter/color_id = 0
+shader_parameter/color_0 = Vector4(1, 1, 1, 1)
+shader_parameter/color_1 = Quaternion(1, 0, 0, 1)
+shader_parameter/color_2 = Quaternion(0, 0, 1, 1)
+shader_parameter/center_radius = 0.005
 shader_parameter/width = 0.001
 shader_parameter/len = 0.008
 shader_parameter/spacing = 0.006
@@ -151,13 +148,12 @@ grow_vertical = 2
 stretch = true
 
 [node name="GameViewport" type="SubViewport" parent="Head/Viewport/CameraViewportContainer"]
-transparent_bg = true
 handle_input_locally = false
-size = Vector2i(284, 160)
 render_target_update_mode = 4
 
 [node name="Camera" type="Camera3D" parent="Head/Viewport/CameraViewportContainer/GameViewport"]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0.54, 0)
+cull_mask = 1048573
 current = true
 fov = 80.0
 near = 0.001
@@ -224,29 +220,6 @@ grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="HUD"]
-visible = false
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -276.0
-offset_top = -122.0
-offset_right = -40.0
-offset_bottom = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_avmet")
-
-[node name="ColorRect" type="ColorRect" parent="HUD/Panel"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.745098)
-
 [node name="BackBufferCopy2" type="BackBufferCopy" parent="HUD"]
 position = Vector2(727, 447)
 scale = Vector2(7.61, 4.89)
@@ -280,23 +253,13 @@ material = SubResource("ShaderMaterial_2p6rt")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -5.0
-offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="HUD"]
-y_sort_enabled = true
-position = Vector2(721, 449)
-scale = Vector2(7.21, 4.54)
-
-[node name="GameFilter" type="ColorRect" parent="HUD"]
 visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_layout_mode = 1
+y_sort_enabled = true
+position = Vector2(140, 79)
+scale = Vector2(1.65, 1)
 
 [node name="RigidDynamicBody3D" type="RigidBody3D" parent="."]

@@ -8,6 +8,8 @@ const MOUSE_SENSITIVITY = 2.25
 const MAX_AIR_WISH_SPEED = 20
 const AIR_ACCELERATE = 100		# Hu/39.97
 
+@export var viewport_resolution: Vector2 = Vector2(852, 420)
+
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = head.get_node("Viewport/CameraViewportContainer/GameViewport/Camera")
 @onready var vport: SubViewport = head.get_node("Viewport/CameraViewportContainer/GameViewport")
@@ -41,11 +43,7 @@ func _get_2d_velocity() -> Vector2:
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	OnHand.player = self
-#	vport.size = DisplayServer.window_get_size()
-	vport.size = Vector2(426, 240)
-#	for item in OnHand.get_children():
-#		if item is BaseWeapon:
-#			item.player = self
+	vport.size = viewport_resolution
 
 func _process(delta):
 	pass
