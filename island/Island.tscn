@@ -3,7 +3,7 @@
 [ext_resource type="Shader" path="res://island/Sea.gdshader" id="1_agjfy"]
 [ext_resource type="Texture2D" uid="uid://bdoifsf6k0qb8" path="res://assets/water_tile.png" id="1_w6ara"]
 [ext_resource type="ArrayMesh" uid="uid://c8knvy5ras8jo" path="res://assets/island_model/island.obj" id="2_r00hx"]
-[ext_resource type="PackedScene" path="res://player/Player.tscn" id="3_5378m"]
+[ext_resource type="PackedScene" uid="uid://b5i1sqd88wlle" path="res://player/Player.tscn" id="3_5378m"]
 [ext_resource type="ArrayMesh" uid="uid://b7jov7hxhbq6j" path="res://assets/island_model/hill.obj" id="5_wot4t"]
 
 [sub_resource type="GDScript" id="GDScript_78lo3"]
