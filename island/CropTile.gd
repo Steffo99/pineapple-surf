@@ -7,6 +7,7 @@ signal on_complete()
 
 @onready var growth_timer: Timer = $GrowthTimer
 @onready var sprout_mesh: MeshInstance3D = $Plant/Sprout
+@export var debug_growth: bool = false
 
 
 func plant():
@@ -19,8 +20,15 @@ func complete():
 	if not growth_timer.is_stopped():
 		growth_timer.stop()
 		emit_signal("on_complete")
+	if debug_growth:
+		plant()
 
 
 func _process(_delta):
 	var scale_factor = 1 - (growth_timer.time_left / growth_timer.wait_time)
 	sprout_mesh.scale = Vector3(scale_factor, scale_factor, scale_factor)
+
+
+func _ready():
+	if debug_growth:
+		plant()
