@@ -2,7 +2,7 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://0a45xjjn77ym"
+uid="uid://dvfq5l72ynw4s"
 path="res://.godot/imported/pixel-operator.ttf-7dca05f861a9e35aa541a83a53d92665.fontdata"
 
 [deps]
@@ -20,8 +20,8 @@ msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
-hinting=1
-subpixel_positioning=1
+hinting=0
+subpixel_positioning=0
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]
