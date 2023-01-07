@@ -68,6 +68,18 @@ skeleton = NodePath("../..")
 
 [node name="PyramidSmolMesh" parent="World" instance=ExtResource("6_klmt8")]
 
+[node name="PyramidSmallMesh2" parent="World" instance=ExtResource("5_uf8hd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 35)
+skeleton = NodePath("../../..")
+
+[node name="PyramidSmolMesh2" parent="World" instance=ExtResource("6_klmt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 38)
+skeleton = NodePath("../../..")
+
+[node name="PyramidSmallMesh3" parent="World" instance=ExtResource("5_uf8hd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 44)
+skeleton = NodePath("../../..")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_302o8")
 
@@ -76,12 +88,3 @@ transform = Transform3D(1, 0, 0, 0, -0.337161, 0.941447, 0, -0.941447, -0.337161
 
 [node name="Player" parent="." instance=ExtResource("3_5378m")]
 transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 0, 4.89631, 0)
-
-[node name="PyramidSmallMesh" parent="." instance=ExtResource("5_uf8hd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 35)
-
-[node name="PyramidSmolMesh" parent="." instance=ExtResource("6_klmt8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 38)
-
-[node name="PyramidSmallMesh2" parent="." instance=ExtResource("5_uf8hd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 44)
