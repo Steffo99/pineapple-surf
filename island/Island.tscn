@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bg88gc1w1gw5m"]
+[gd_scene load_steps=14 format=3 uid="uid://bg88gc1w1gw5m"]
 
 [ext_resource type="Shader" path="res://island/Sea.gdshader" id="1_agjfy"]
 [ext_resource type="Texture2D" uid="uid://bdoifsf6k0qb8" path="res://assets/water_tile.png" id="1_w6ara"]
@@ -8,23 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cxa5irr1atgke" path="res://island/PyramidSmallMesh.tscn" id="5_uf8hd"]
 [ext_resource type="PackedScene" uid="uid://bknwefv5ycc3u" path="res://island/PyramidSmolMesh.tscn" id="6_klmt8"]
 [ext_resource type="PackedScene" uid="uid://cf35yl04qtru3" path="res://island/CropTile.tscn" id="8_4ooup"]
-
-[sub_resource type="GDScript" id="GDScript_78lo3"]
-script/source = "extends Node3D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	for node in $World.get_children():
-		var material: Material = node.get_active_material(0)
-		if material is StandardMaterial3D:
-			material.texture_filter = BaseMaterial3D.TextureFilter.TEXTURE_FILTER_NEAREST
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3uyyi"]
 render_priority = 0
@@ -53,7 +36,6 @@ background_mode = 2
 sky = SubResource("Sky_j6hso")
 
 [node name="Island" type="Node3D"]
-script = SubResource("GDScript_78lo3")
 
 [node name="World" type="Node3D" parent="."]
 
