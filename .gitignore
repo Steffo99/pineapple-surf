@@ -3,3 +3,6 @@
 
 # Steffo's random assets folder
 available-assets/
+
+# macOS shenanigans
+.DS_Store

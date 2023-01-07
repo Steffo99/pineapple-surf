@@ -4,6 +4,25 @@
 [ext_resource type="Script" path="res://menu/Menu.gd" id="2_6amk3"]
 [ext_resource type="Texture2D" uid="uid://bxyximtgui1ux" path="res://assets/grass_menu_tile.png" id="2_q14jx"]
 
+[sub_resource type="GDScript" id="GDScript_25oo4"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		get_tree().change_scene_to_file(\"res://island/Island.tscn\")
+"
+
 [node name="Menu" type="Control"]
 texture_filter = 1
 layout_mode = 3
@@ -68,6 +87,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 0
 text = "Play"
+script = SubResource("GDScript_25oo4")
 
 [node name="Authors2" type="Label" parent="Content"]
 layout_mode = 2
