@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://bg88gc1w1gw5m"]
 
 [ext_resource type="Texture2D" uid="uid://bdoifsf6k0qb8" path="res://assets/water_tile.png" id="1_w6ara"]
 
@@ -32,7 +32,7 @@ sky = SubResource("Sky_j6hso")
 
 [node name="Island" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Sea" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_4ibso")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
