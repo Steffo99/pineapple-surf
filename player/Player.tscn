@@ -20,6 +20,7 @@ metallic_specular = 0.0
 material = SubResource("StandardMaterial3D_aqp8x")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_otair"]
+radius = 0.48
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqko1"]
 bg_color = Color(0.240234, 0.240234, 0.240234, 1)
