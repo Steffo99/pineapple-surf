@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bsv0f7c8nev8x"
+path="res://.godot/imported/pyramid_small.obj-5726e166dd6eda5f42a55fcb6d44df9f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pyramid_small.obj-5726e166dd6eda5f42a55fcb6d44df9f.mesh"]
+
+source_file="res://assets/island_model/pyramid_small.obj"
+dest_files=["res://.godot/imported/pyramid_small.obj-5726e166dd6eda5f42a55fcb6d44df9f.mesh", "res://.godot/imported/pyramid_small.obj-5726e166dd6eda5f42a55fcb6d44df9f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
