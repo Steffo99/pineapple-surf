@@ -1,12 +1,12 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://w0ipvdnh4l8s"]
 
-[ext_resource type="Texture2D" uid="uid://bwbbfj7eom0vf" path="res://assets/island_model/texture_1.png" id="1_2p6y5"]
+[ext_resource type="Texture2D" uid="uid://ebyf8q6s6yuj" path="res://assets/island_model/texture_0.png" id="1_gc4um"]
 
 [resource]
 resource_name = "material1"
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("1_2p6y5")
+albedo_texture = ExtResource("1_gc4um")
 texture_filter = 0
 texture_repeat = false
