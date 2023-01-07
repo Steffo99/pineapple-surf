@@ -1,19 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cf35yl04qtru3"]
+[gd_scene load_steps=5 format=3 uid="uid://cf35yl04qtru3"]
 
 [ext_resource type="Script" path="res://island/CropTile.gd" id="1_7lls2"]
-[ext_resource type="Texture2D" uid="uid://bwbbfj7eom0vf" path="res://assets/island_model/texture_1.png" id="1_fn720"]
+[ext_resource type="Material" uid="uid://w0ipvdnh4l8s" path="res://island/CropMaterial.tres" id="2_1oajr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ja5h"]
 size = Vector3(1, 0.1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ed1p1"]
-resource_name = "material1"
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("1_fn720")
-texture_filter = 0
-texture_repeat = false
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_28cd1"]
 _surfaces = [{
@@ -22,8 +13,8 @@ _surfaces = [{
 "format": 4119,
 "index_count": 24,
 "index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 1, 0, 0, 0, 4, 0, 5, 0, 6, 0, 7, 0, 4, 0, 6, 0, 8, 0, 9, 0, 10, 0, 11, 0, 8, 0, 10, 0, 12, 0, 13, 0, 14, 0, 15, 0, 12, 0, 14, 0),
-"material": SubResource("StandardMaterial3D_ed1p1"),
-"name": "material1",
+"material": ExtResource("2_1oajr"),
+"name": "material0",
 "primitive": 3,
 "vertex_count": 16,
 "vertex_data": PackedByteArray(0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 0, 191, 255, 191, 255, 127, 255, 255, 255, 223, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 63, 255, 191, 255, 127, 255, 255, 255, 223, 0, 0, 0, 191, 0, 0, 128, 63, 0, 0, 0, 63, 255, 191, 255, 127, 255, 255, 255, 223, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 191, 255, 191, 255, 127, 255, 255, 255, 223, 0, 0, 0, 191, 0, 0, 128, 63, 0, 0, 0, 191, 255, 63, 255, 127, 0, 0, 255, 31, 0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 0, 63, 255, 63, 255, 127, 0, 0, 255, 31, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 255, 63, 255, 127, 0, 0, 255, 31, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 191, 255, 63, 255, 127, 0, 0, 255, 31, 0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 0, 191, 0, 0, 255, 191, 255, 255, 255, 31, 0, 0, 0, 191, 0, 0, 128, 63, 0, 0, 0, 63, 0, 0, 255, 191, 255, 255, 255, 31, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 255, 191, 255, 255, 255, 31, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 191, 0, 0, 255, 191, 255, 255, 255, 31, 0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 0, 63, 255, 255, 255, 191, 255, 191, 255, 63, 0, 0, 0, 191, 0, 0, 128, 63, 0, 0, 0, 191, 255, 255, 255, 191, 255, 191, 255, 63, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 191, 255, 255, 255, 191, 255, 191, 255, 63, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 255, 255, 255, 191, 255, 191, 255, 63)
