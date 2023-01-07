@@ -93,9 +93,9 @@ func _process(delta: float) -> void:
 shader = ExtResource("4_dut1p")
 shader_parameter/center_enabled = false
 shader_parameter/legs_enabled = true
-shader_parameter/inverted = true
+shader_parameter/inverted = false
 shader_parameter/color_id = 0
-shader_parameter/color_0 = Quaternion(0, 1, 0, 1)
+shader_parameter/color_0 = Vector4(1, 1, 1, 1)
 shader_parameter/color_1 = Quaternion(1, 0, 0, 1)
 shader_parameter/color_2 = Quaternion(0, 0, 1, 1)
 shader_parameter/center_radius = 0.005
@@ -140,7 +140,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CameraViewportContainer" type="SubViewportContainer" parent="Head/Viewport"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -183,7 +182,6 @@ theme = SubResource("Theme_smyke")
 
 [node name="FPS_Label" type="Label" parent="HUD"]
 visible = false
-layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -196,7 +194,7 @@ horizontal_alignment = 2
 script = SubResource("GDScript_iiadi")
 
 [node name="PointsSpawner" type="Control" parent="HUD"]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -208,7 +206,6 @@ script = SubResource("GDScript_5d122")
 
 [node name="Speed_Label" type="Label" parent="HUD"]
 visible = false
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -231,7 +228,6 @@ copy_mode = 2
 [node name="SubViewportContainer" type="SubViewportContainer" parent="HUD"]
 visible = false
 show_behind_parent = true
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -254,7 +250,6 @@ MainCamera = NodePath("../../../../Head/Viewport/CameraViewportContainer/GameVie
 
 [node name="Crosshair" type="ColorRect" parent="HUD"]
 material = SubResource("ShaderMaterial_2p6rt")
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
