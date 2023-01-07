@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://dnrl0uycbw3lp"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_rujcr"]
-[ext_resource type="Script" path="res://Player/Head.gd" id="2_fs52a"]
-[ext_resource type="Script" path="res://Player/OnHand.gd" id="3_au30p"]
-[ext_resource type="Shader" path="res://Player/crosshair.gdshader" id="6_r7xbu"]
+[ext_resource type="Script" path="res://player/Head.gd" id="2_ohlgu"]
+[ext_resource type="Script" path="res://player/OnHand.gd" id="3_3rcjl"]
+[ext_resource type="Shader" path="res://player/crosshair.gdshader" id="4_dut1p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_berhm"]
 
@@ -93,7 +93,7 @@ func _process(delta: float) -> void:
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2p6rt"]
-shader = ExtResource("6_r7xbu")
+shader = ExtResource("4_dut1p")
 shader_parameter/center_enabled = false
 shader_parameter/legs_enabled = true
 shader_parameter/inverted = false
@@ -114,7 +114,7 @@ script = ExtResource("1_rujcr")
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54, 0)
-script = ExtResource("2_fs52a")
+script = ExtResource("2_ohlgu")
 
 [node name="Torch" type="SpotLight3D" parent="Head"]
 visible = false
@@ -131,7 +131,7 @@ target_position = Vector3(0, 0, -1.4)
 
 [node name="OnHand" type="Node3D" parent="Head"]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0)
-script = ExtResource("3_au30p")
+script = ExtResource("3_3rcjl")
 
 [node name="Viewport" type="Control" parent="Head"]
 texture_filter = 1
@@ -143,6 +143,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CameraViewportContainer" type="SubViewportContainer" parent="Head/Viewport"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -185,6 +186,7 @@ grow_vertical = 2
 theme = SubResource("Theme_smyke")
 
 [node name="FPS_Label" type="Label" parent="HUD"]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -197,7 +199,7 @@ horizontal_alignment = 2
 script = SubResource("GDScript_iiadi")
 
 [node name="PointsSpawner" type="Control" parent="HUD"]
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -208,6 +210,7 @@ grow_vertical = 2
 script = SubResource("GDScript_5d122")
 
 [node name="Speed_Label" type="Label" parent="HUD"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -224,6 +227,7 @@ vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="HUD"]
 visible = false
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -238,6 +242,7 @@ grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_avmet")
 
 [node name="ColorRect" type="ColorRect" parent="HUD/Panel"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -253,6 +258,7 @@ copy_mode = 2
 [node name="SubViewportContainer" type="SubViewportContainer" parent="HUD"]
 visible = false
 show_behind_parent = true
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -275,6 +281,7 @@ MainCamera = NodePath("../../../../Head/Viewport/CameraViewportContainer/GameVie
 
 [node name="Crosshair" type="ColorRect" parent="HUD"]
 material = SubResource("ShaderMaterial_2p6rt")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -290,6 +297,7 @@ scale = Vector2(7.21, 4.54)
 
 [node name="GameFilter" type="ColorRect" parent="HUD"]
 visible = false
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
