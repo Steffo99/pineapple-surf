@@ -14,6 +14,13 @@ config/name="LD52"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
+[display]
+
+window/size/viewport_width=240
+window/size/viewport_height=160
+window/stretch/mode="canvas_items"
+window/stretch/scale=4.0
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
