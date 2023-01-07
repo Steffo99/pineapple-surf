@@ -10,13 +10,15 @@ signal on_complete()
 
 
 func plant():
-	growth_timer.start()
-	emit_signal("on_planted")
+	if growth_timer.is_stopped():
+		growth_timer.start()
+		emit_signal("on_planted")
 
 
 func complete():
-	growth_timer.stop()
-	emit_signal("on_complete")
+	if not growth_timer.is_stopped():
+		growth_timer.stop()
+		emit_signal("on_complete")
 
 
 func _process(_delta):
