@@ -52,7 +52,6 @@ sky = SubResource("Sky_j6hso")
 script = SubResource("GDScript_78lo3")
 
 [node name="Sea" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("PlaneMesh_4ibso")
 
 [node name="Island" type="MeshInstance3D" parent="."]

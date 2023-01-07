@@ -17,7 +17,7 @@ _global_script_classes=[{
 "base": "CharacterBody3D",
 "class": &"Player",
 "language": &"GDScript",
-"path": "res://player/player.gd"
+"path": "res://player/Player.gd"
 }, {
 "base": "Object",
 "class": &"PlayerInputData",
