@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxyximtgui1ux"
-path="res://.godot/imported/grass_menu_tex.png-d1d46f8d90bb3c70a517784ed7c5ab24.ctex"
+uid="uid://pn6sturkvodg"
+path="res://.godot/imported/trees_surplus.png-c1dfc72e4acb0e00f9f6c6a7aa96e208.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/grass_menu_tex.png"
-dest_files=["res://.godot/imported/grass_menu_tex.png-d1d46f8d90bb3c70a517784ed7c5ab24.ctex"]
+source_file="res://assets/trees_surplus.png"
+dest_files=["res://.godot/imported/trees_surplus.png-c1dfc72e4acb0e00f9f6c6a7aa96e208.ctex"]
 
 [params]
 

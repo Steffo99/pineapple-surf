@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4sm1qw01u1xq"]
+[gd_scene load_steps=10 format=3 uid="uid://bufi0wh54u5x5"]
 
-[ext_resource type="FontFile" uid="uid://dvfq5l72ynw4s" path="res://assets/pixel-operator.ttf" id="1_43bge"]
-[ext_resource type="Texture2D" uid="uid://bxyximtgui1ux" path="res://assets/grass_menu_tex.png" id="2_cmvxt"]
+[ext_resource type="FontFile" uid="uid://dvfq5l72ynw4s" path="res://assets/pixel_operator.ttf" id="1_t4wyx"]
+[ext_resource type="Texture2D" uid="uid://bxyximtgui1ux" path="res://assets/grass_menu_tile.png" id="2_q14jx"]
 
 [sub_resource type="FontVariation" id="FontVariation_srw5c"]
-base_font = ExtResource("1_43bge")
+base_font = ExtResource("1_t4wyx")
 variation_embolden = 0.01
 spacing_bottom = 2
 
@@ -61,7 +61,7 @@ Button/styles/pressed = SubResource("StyleBoxFlat_xmx50")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/constants/line_spacing = 2
 Label/font_sizes/font_size = 16
-Label/fonts/font = ExtResource("1_43bge")
+Label/fonts/font = ExtResource("1_t4wyx")
 
 [node name="Menu" type="Control"]
 texture_filter = 1
@@ -81,7 +81,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_cmvxt")
+texture = ExtResource("2_q14jx")
 stretch_mode = 1
 
 [node name="Content" type="VBoxContainer" parent="."]

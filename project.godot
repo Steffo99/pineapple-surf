@@ -22,6 +22,10 @@ window/size/viewport_width=284
 window/size/viewport_height=160
 window/stretch/mode="canvas_items"
 
+[gui]
+
+fonts/dynamic_fonts/use_oversampling=false
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

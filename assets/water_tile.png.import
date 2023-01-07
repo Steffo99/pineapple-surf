@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdoifsf6k0qb8"
-path.s3tc="res://.godot/imported/water_tex.png-c6bd53bb7eb5f8d45976d8e152ea2fe7.s3tc.ctex"
-path.etc2="res://.godot/imported/water_tex.png-c6bd53bb7eb5f8d45976d8e152ea2fe7.etc2.ctex"
+path.s3tc="res://.godot/imported/water_tile.png-3409e1652e492940c85ec86e868e691e.s3tc.ctex"
+path.etc2="res://.godot/imported/water_tile.png-3409e1652e492940c85ec86e868e691e.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/water_tex.png"
-dest_files=["res://.godot/imported/water_tex.png-c6bd53bb7eb5f8d45976d8e152ea2fe7.s3tc.ctex", "res://.godot/imported/water_tex.png-c6bd53bb7eb5f8d45976d8e152ea2fe7.etc2.ctex"]
+source_file="res://assets/water_tile.png"
+dest_files=["res://.godot/imported/water_tile.png-3409e1652e492940c85ec86e868e691e.s3tc.ctex", "res://.godot/imported/water_tile.png-3409e1652e492940c85ec86e868e691e.etc2.ctex"]
 
 [params]
 
