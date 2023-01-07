@@ -10,7 +10,7 @@ script/source = "extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Island.get_active_material(0).set(\"texture_filter\", BaseMaterial3D.TextureFilter.TEXTURE_FILTER_NEAREST)
+	$Island.get_active_material(0).texture_filter = BaseMaterial3D.TextureFilter.TEXTURE_FILTER_NEAREST
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
