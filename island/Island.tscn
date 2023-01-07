@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bg88gc1w1gw5m"]
+[gd_scene load_steps=15 format=3 uid="uid://bg88gc1w1gw5m"]
 
 [ext_resource type="Shader" path="res://island/Sea.gdshader" id="1_agjfy"]
 [ext_resource type="Texture2D" uid="uid://bdoifsf6k0qb8" path="res://assets/water_tile.png" id="1_w6ara"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://tahdk48hqxis" path="res://island/HillMesh.tscn" id="4_5ll24"]
 [ext_resource type="PackedScene" uid="uid://cxa5irr1atgke" path="res://island/PyramidSmallMesh.tscn" id="5_uf8hd"]
 [ext_resource type="PackedScene" uid="uid://bknwefv5ycc3u" path="res://island/PyramidSmolMesh.tscn" id="6_klmt8"]
+[ext_resource type="PackedScene" uid="uid://boxtb3trgcy8c" path="res://island/PillarMesh.tscn" id="7_grmwj"]
 [ext_resource type="PackedScene" uid="uid://cf35yl04qtru3" path="res://island/CropTile.tscn" id="8_4ooup"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3uyyi"]
@@ -62,6 +63,15 @@ skeleton = NodePath("../../..")
 [node name="PyramidSmallMesh3" parent="World" instance=ExtResource("5_uf8hd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 44)
 skeleton = NodePath("../../..")
+
+[node name="PillarMesh" parent="World" instance=ExtResource("7_grmwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 9)
+
+[node name="PillarMesh2" parent="World" instance=ExtResource("7_grmwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 7)
+
+[node name="PillarMesh3" parent="World" instance=ExtResource("7_grmwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 5)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_302o8")
