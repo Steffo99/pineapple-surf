@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bufi0wh54u5x5"]
+[gd_scene load_steps=4 format=3 uid="uid://bufi0wh54u5x5"]
 
 [ext_resource type="Theme" uid="uid://c5a1nyqumj46j" path="res://menu/menu_theme.tres" id="1_mkxnc"]
 [ext_resource type="Texture2D" uid="uid://bxyximtgui1ux" path="res://assets/grass_menu_tile.png" id="2_q14jx"]
+
+[sub_resource type="GDScript" id="GDScript_25oo4"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		get_tree().change_scene_to_file(\"res://island/Island.tscn\")
+"
 
 [node name="Menu" type="Control"]
 texture_filter = 1
@@ -15,6 +34,7 @@ size_flags_vertical = 3
 theme = ExtResource("1_mkxnc")
 
 [node name="Panel" type="TextureRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -24,6 +44,7 @@ texture = ExtResource("2_q14jx")
 stretch_mode = 1
 
 [node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -32,29 +53,23 @@ grow_vertical = 2
 alignment = 1
 
 [node name="Authors" type="Label" parent="Content"]
-offset_right = 284.0
-offset_bottom = 18.0
+layout_mode = 2
 text = "A game by Ichicoro and Steffo"
 horizontal_alignment = 1
 
 [node name="Title" type="Label" parent="Content"]
-offset_top = 25.0
-offset_right = 284.0
-offset_bottom = 75.0
+layout_mode = 2
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 48
 text = "Harvest"
 horizontal_alignment = 1
 
 [node name="Control" type="Control" parent="Content"]
-layout_mode = 3
-anchors_preset = 0
-offset_top = 110.0
-offset_right = 284.0
-offset_bottom = 110.0
+layout_mode = 2
 size_flags_vertical = 6
 
 [node name="Play" type="Button" parent="Content/Control"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -70,11 +85,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 0
 text = "Play"
+script = SubResource("GDScript_25oo4")
 
 [node name="Authors2" type="Label" parent="Content"]
-offset_top = 142.0
-offset_right = 284.0
-offset_bottom = 160.0
+layout_mode = 2
 size_flags_vertical = 1
 text = "Ludum Dare 52 - Harvest"
 horizontal_alignment = 1
