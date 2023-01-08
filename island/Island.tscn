@@ -35,40 +35,53 @@ sky = SubResource("Sky_j6hso")
 [node name="Island" type="Node3D"]
 
 [node name="World" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Sea" parent="World" instance=ExtResource("1_e0hpm")]
+metadata/_edit_lock_ = true
 
 [node name="IslandMesh" parent="World" instance=ExtResource("3_g5ug0")]
+metadata/_edit_lock_ = true
 
 [node name="HillMesh" parent="World" instance=ExtResource("4_5ll24")]
+metadata/_edit_lock_ = true
 
 [node name="PyramidSmallMesh" parent="World" instance=ExtResource("5_uf8hd")]
+metadata/_edit_lock_ = true
 
 [node name="PyramidSmolMesh" parent="World" instance=ExtResource("6_klmt8")]
+metadata/_edit_lock_ = true
 
 [node name="PyramidSmallMesh2" parent="World" instance=ExtResource("5_uf8hd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 35)
 skeleton = NodePath("../../..")
+metadata/_edit_lock_ = true
 
 [node name="PyramidSmolMesh2" parent="World" instance=ExtResource("6_klmt8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 38)
 skeleton = NodePath("../../..")
+metadata/_edit_lock_ = true
 
 [node name="PyramidSmallMesh3" parent="World" instance=ExtResource("5_uf8hd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 44)
 skeleton = NodePath("../../..")
+metadata/_edit_lock_ = true
 
 [node name="PillarMesh" parent="World" instance=ExtResource("7_grmwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 9)
+metadata/_edit_lock_ = true
 
 [node name="PillarMesh2" parent="World" instance=ExtResource("7_grmwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 7)
+metadata/_edit_lock_ = true
 
 [node name="PillarMesh3" parent="World" instance=ExtResource("7_grmwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 5)
+metadata/_edit_lock_ = true
 
 [node name="HoppityMesh" parent="World" instance=ExtResource("8_5pio0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -27, 0, 53)
+metadata/_edit_lock_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_302o8")
@@ -113,28 +126,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 39)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 2, 53)
 
 [node name="Leafpile8" parent="CropTiles" instance=ExtResource("9_472aa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 2, 61)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 2, 61)
 
 [node name="Leafpile9" parent="CropTiles" instance=ExtResource("9_472aa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 2, 63)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 3, 58)
 
 [node name="Leafpile10" parent="CropTiles" instance=ExtResource("9_472aa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 2, 61)
 
 [node name="Leafpile11" parent="CropTiles" instance=ExtResource("9_472aa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 2, 59)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 2, 60)
 
 [node name="Leafpile12" parent="CropTiles" instance=ExtResource("9_472aa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 3, 56)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 3, 56)
 
 [node name="Leafpile13" parent="CropTiles" instance=ExtResource("9_472aa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 3, 66)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 3, 65)
 
 [node name="Leafpile14" parent="CropTiles" instance=ExtResource("9_472aa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 3, 61)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 3, 62)
 
 [node name="Leafpile15" parent="CropTiles" instance=ExtResource("9_472aa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 3, 61)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 3, 60)
 
 [node name="Leafpile16" parent="CropTiles" instance=ExtResource("9_472aa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 58)
