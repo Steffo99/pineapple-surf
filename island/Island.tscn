@@ -88,4 +88,70 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 3)
 [node name="Leafpile2" parent="CropTiles" instance=ExtResource("9_472aa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3, -4)
 
+[node name="Leafpile3" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3, 25)
+
+[node name="Leafpile4" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 20)
+
+[node name="Leafpile5" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 3, 33)
+
+[node name="Leafpile25" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 11)
+
+[node name="Leafpile23" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 1, 24)
+
+[node name="Leafpile27" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 32)
+
+[node name="Leafpile28" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 39)
+
+[node name="Leafpile7" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 2, 53)
+
+[node name="Leafpile8" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 2, 61)
+
+[node name="Leafpile9" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 2, 63)
+
+[node name="Leafpile10" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 2, 61)
+
+[node name="Leafpile11" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 2, 59)
+
+[node name="Leafpile12" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 3, 56)
+
+[node name="Leafpile13" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 3, 66)
+
+[node name="Leafpile14" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 3, 61)
+
+[node name="Leafpile15" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 3, 61)
+
+[node name="Leafpile16" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 58)
+
+[node name="Leafpile20" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 57)
+
+[node name="Leafpile21" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 63)
+
+[node name="Leafpile17" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 56)
+
+[node name="Leafpile18" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 59)
+
+[node name="Leafpile19" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, 60)
+
 [node name="Produce" type="Node3D" parent="."]
