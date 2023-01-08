@@ -14,7 +14,7 @@ radius = 3.0
 [node name="Pineapple" type="RigidBody3D"]
 collision_layer = 2
 lock_rotation = true
-linear_damp = 3.0
+linear_damp = 1.0
 
 [node name="Shape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)

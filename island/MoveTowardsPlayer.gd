@@ -19,7 +19,6 @@ func _physics_process(delta):
 	if captured:
 		var direction = player.position - parent.position
 		var force = direction.normalized() * force_multiplier * delta
-		force.y = abs(force.y)
 		parent.apply_force(force)
 
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cf35yl04qtru3"]
+[gd_scene load_steps=8 format=3 uid="uid://cf35yl04qtru3"]
 
 [ext_resource type="Script" path="res://island/CropTile.gd" id="1_7lls2"]
 [ext_resource type="Material" uid="uid://w0ipvdnh4l8s" path="res://island/CropMaterial.tres" id="2_1oajr"]
+[ext_resource type="Script" path="res://island/Producer.gd" id="2_jejoo"]
 [ext_resource type="AudioStream" uid="uid://lkftwgdun745" path="res://assets/pop.wav" id="3_gur2a"]
 [ext_resource type="Script" path="res://island/Pop.gd" id="4_5e7wk"]
 
@@ -24,6 +25,10 @@ _surfaces = [{
 
 [node name="CropTile" type="Node3D"]
 script = ExtResource("1_7lls2")
+
+[node name="Producer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+script = ExtResource("2_jejoo")
 
 [node name="Plant" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)

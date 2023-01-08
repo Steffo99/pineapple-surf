@@ -8,6 +8,10 @@ signal on_complete()
 @onready var growth_timer: Timer = $GrowthTimer
 @onready var sprout_mesh: MeshInstance3D = $Plant/Sprout
 @onready var pop_sound: AudioStreamPlayer3D = $Pop
+@onready var producer: Node3D = $Producer
+
+@export var produce_scene: PackedScene = preload("res://island/Pineapple.tscn")
+
 @export var debug_growth: bool = false
 @export var debug_growth_offset: float = 0.0;
 
@@ -15,6 +19,7 @@ signal on_complete()
 func plant():
 	if growth_timer.is_stopped():
 		growth_timer.start()
+		producer.produce_with_random_force()
 		emit_signal("on_planted")
 
 
