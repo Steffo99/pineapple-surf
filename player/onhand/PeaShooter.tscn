@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cu53ekfgwammu"]
 
 [ext_resource type="Script" path="res://player/onhand/PeaShooter.gd" id="1_bl35a"]
-[ext_resource type="PackedScene" uid="uid://bcl83sr2mgwaf" path="res://player/onhand/peashooter_model.tscn" id="2_ra8vl"]
+[ext_resource type="PackedScene" uid="uid://dkkjtqeta3aul" path="res://player/onhand/peashooter_model.tscn" id="2_ra8vl"]
 [ext_resource type="AudioStream" uid="uid://bp07vx515hkr2" path="res://assets/peashooter/peashooter.wav" id="4_uhlty"]
 
 [node name="PeaShooter" type="Node3D"]
