@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dutcugv574855"]
+
+[ext_resource type="Texture2D" uid="uid://ebyf8q6s6yuj" path="res://assets/island_model/texture_0.png" id="1_qnv14"]
+[ext_resource type="PackedScene" uid="uid://ceki0n8cyjlrm" path="res://island/RespawnPad.tscn" id="2_04d83"]
+[ext_resource type="PackedScene" uid="uid://cm0apcnq0f26s" path="res://island/Seeds.tscn" id="3_r4rxd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijmro"]
+resource_name = "material0"
+transparency = 1
+albedo_texture = ExtResource("1_qnv14")
+metallic = 1.0
+texture_filter = 0
+texture_repeat = false
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_o7j0n"]
+_surfaces = [{
+"aabb": AABB(-5.55112e-17, 0.0625, 0, 1.00001, 9.99868e-06, 1),
+"attribute_data": PackedByteArray(143, 194, 245, 62, 110, 219, 54, 63, 174, 71, 225, 62, 146, 36, 73, 63, 174, 71, 225, 62, 110, 219, 54, 63, 143, 194, 245, 62, 146, 36, 73, 63),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 1, 0, 0, 0),
+"material": SubResource("StandardMaterial3D_ijmro"),
+"name": "material0",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 61, 0, 0, 0, 0, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 128, 164, 0, 0, 128, 61, 0, 0, 128, 63, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 128, 164, 0, 0, 128, 61, 0, 0, 0, 0, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 61, 0, 0, 128, 63, 255, 127, 255, 255, 255, 255, 255, 191)
+}]
+
+[node name="Leafpile" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_o7j0n")
+skeleton = NodePath("../..")
+
+[node name="RespawnPad" parent="." instance=ExtResource("2_04d83")]
+spawn_on_ready = true
+spawn_scene = ExtResource("3_r4rxd")
+
+[editable path="RespawnPad"]
