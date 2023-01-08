@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bg88gc1w1gw5m"]
+[gd_scene load_steps=16 format=3 uid="uid://bg88gc1w1gw5m"]
 
 [ext_resource type="Shader" path="res://island/Sea.gdshader" id="1_agjfy"]
 [ext_resource type="Texture2D" uid="uid://bdoifsf6k0qb8" path="res://assets/water_tile.png" id="1_w6ara"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bknwefv5ycc3u" path="res://island/PyramidSmolMesh.tscn" id="6_klmt8"]
 [ext_resource type="PackedScene" uid="uid://boxtb3trgcy8c" path="res://island/PillarMesh.tscn" id="7_grmwj"]
 [ext_resource type="PackedScene" uid="uid://cf35yl04qtru3" path="res://island/CropTile.tscn" id="8_4ooup"]
+[ext_resource type="PackedScene" uid="uid://v7bv81krh12e" path="res://island/Pineapple.tscn" id="10_cvxfg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3uyyi"]
 render_priority = 0
@@ -95,3 +96,8 @@ debug_growth_offset = 0.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 8)
 debug_growth = true
 debug_growth_offset = 0.6
+
+[node name="Pineapple" parent="." instance=ExtResource("10_cvxfg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 31)
+
+[editable path="Pineapple"]

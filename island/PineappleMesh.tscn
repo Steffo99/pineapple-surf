@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwwpi0itor6cw"]
+
+[ext_resource type="Texture2D" uid="uid://cukw0nvmbodxq" path="res://assets/island_model/texture_2.png" id="1_x2h5q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8u420"]
+resource_name = "material2"
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_x2h5q")
+texture_filter = 0
+billboard_mode = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sjes8"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, 0, 1.00001, 1.00001, 1e-05),
+"attribute_data": PackedByteArray(40, 175, 161, 62, 0, 0, 0, 0, 229, 53, 148, 62, 172, 170, 42, 62, 229, 53, 148, 62, 0, 0, 0, 0, 40, 175, 161, 62, 172, 170, 42, 62),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 1, 0, 0, 0),
+"material": SubResource("StandardMaterial3D_8u420"),
+"name": "material2",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 191, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[node name="PineappleMesh" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_sjes8")
+skeleton = NodePath("../..")
