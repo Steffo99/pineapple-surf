@@ -85,21 +85,6 @@ func _physics_process(delta):
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 	else:
 		_air_accelerate(direction, based.length(), AIR_ACCELERATE, delta)
-
-	
-	# Apply camera effects
-	var camera_yaw := 0
-	var current_speed := _get_2d_velocity().length()
-#	if is_on_floor() and current_speed > 0:
-#		camera_yaw = -clamp(_get_2d_velocity().length() * input_dir.x, -25, 25)
-#	else:
-#		camera_yaw = 0
-	
-#	camera.rotation.z = move_toward(
-#		0,
-#		camera_yaw, 
-#		delta
-#	) * 2.5
 	
 	if active_weapon and active_weapon.ammoType != BaseWeapon.AmmoType.NONE:
 		ammo_label.show()
@@ -133,18 +118,8 @@ func _air_accelerate(wish_dir: Vector3, wish_speed: float, airaccelerate: float,
 	velocity += accelspeed * wish_dir
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	self.camera.global_transform = self.head.global_transform
-
-
-func wall_running() -> bool:
-	if is_on_wall_only():
-		if Input.is_action_pressed("jump"):
-			var wall_normal := get_wall_normal()
-			var bas = transform.basis * velocity
-			velocity.y /= 2
-			return true
-	return false
 
 
 func _input(event):
