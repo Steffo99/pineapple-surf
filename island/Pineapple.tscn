@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://v7bv81krh12e"]
+[gd_scene load_steps=9 format=3 uid="uid://v7bv81krh12e"]
 
 [ext_resource type="PackedScene" uid="uid://bwwpi0itor6cw" path="res://island/PineappleMesh.tscn" id="1_ndmmp"]
+[ext_resource type="Script" path="res://island/Pineapple.gd" id="1_sbec5"]
 [ext_resource type="AudioStream" uid="uid://lkftwgdun745" path="res://assets/pop.wav" id="3_b3ttd"]
 [ext_resource type="Script" path="res://island/Pop.gd" id="4_rn5e2"]
 [ext_resource type="PackedScene" uid="uid://cvou86mnmtloe" path="res://island/MoveTowardsPlayer.tscn" id="4_xnsun"]
 [ext_resource type="PackedScene" uid="uid://ci0hy0d4d1476" path="res://island/CollectibleByPlayer.tscn" id="5_yps0c"]
+[ext_resource type="PackedScene" uid="uid://bj4d3a0jxgvpu" path="res://island/CanSplash.tscn" id="7_3mgie"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ax3vd"]
 height = 0.9
@@ -15,6 +17,7 @@ collision_layer = 2
 collision_mask = 5
 lock_rotation = true
 linear_damp = 1.0
+script = ExtResource("1_sbec5")
 
 [node name="Shape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
@@ -33,8 +36,7 @@ target_path = NodePath("..")
 [node name="CollectibleByPlayer" parent="." instance=ExtResource("5_yps0c")]
 target_path = NodePath("..")
 
-[node name="CollectSound" parent="CollectibleByPlayer" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="CanSplash" parent="." instance=ExtResource("7_3mgie")]
 
 [editable path="MoveTowardsPlayer"]
 [editable path="CollectibleByPlayer"]
