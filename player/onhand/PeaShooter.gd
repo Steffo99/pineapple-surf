@@ -56,15 +56,16 @@ func try_placing_seed(ray: RayCast3D) -> bool:
 	var point = ray.get_collision_point() as Vector3
 	var normal = ray.get_collision_normal() as Vector3
 	var coll = ray.get_collider() as CollisionObject3D
-	if normal != Vector3(0,1,0):
-		print("Not horizontal, no plant for you :<")
+	var similarity = normal.dot(Vector3.UP)
+
+	if similarity < 0.95:
 		return false
 		
 	if coll.collision_layer == 0b10000:
-		print("Colliding with planted seed, not planting again")
 		return false
 	
-	var correct_point = point.floor()
+	var correct_point = Vector3(floor(point.x), round(point.y), floor(point.z))
+
 	var crop = croptile.instantiate() as CropTile
 	crop.position = correct_point
 	croptiles_container.add_child(crop)

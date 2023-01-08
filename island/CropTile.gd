@@ -10,6 +10,7 @@ signal on_complete()
 @onready var sprout_mesh: MeshInstance3D = $Plant/Sprout
 @onready var pop_sound: AudioStreamPlayer3D = $Pop
 @onready var producer: Node3D = $Producer
+@onready var plant_shape: CollisionShape3D = $Plant/PlantableArea
 
 @export var produce_scene: PackedScene = preload("res://island/Pineapple.tscn")
 
@@ -29,6 +30,10 @@ func complete():
 	emit_signal("on_complete")
 	if debug_growth:
 		plant()
+	else:
+		plant_shape.disabled = true
+		await get_tree().create_timer(1).timeout
+		queue_free()
 
 
 func _process(_delta):
