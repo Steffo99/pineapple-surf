@@ -6,6 +6,8 @@ var   last_fired := 0
 var   remaining  := 10
 
 @onready var ray = $RayCast3D
+# FIXME: use singleton class here as well
+@onready var croptiles_container: Node3D = get_tree().root.find_child("CropTiles", true, false)
 var croptile = preload("res://island/CropTile.tscn")
 
 
@@ -60,7 +62,7 @@ func try_placing_seed(ray: RayCast3D) -> bool:
 	var correct_point = point.floor()
 	var crop = croptile.instantiate() as CropTile
 	crop.position = correct_point
-	crop.debug_growth = true
-	get_tree().root.add_child(crop)
+	croptiles_container.add_child(crop)
+	crop.plant()
 	
 	return true
