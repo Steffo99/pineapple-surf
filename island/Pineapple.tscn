@@ -22,9 +22,10 @@ shape = SubResource("CylinderShape3D_t5bjw")
 
 [node name="PineappleMesh" parent="." instance=ExtResource("1_ndmmp")]
 
-[node name="MoveTowardsPlayer" type="Node3D" parent="."]
+[node name="MoveTowardsPlayer" type="Node3D" parent="." node_paths=PackedStringArray("target")]
 script = ExtResource("2_d3itl")
 force_multiplier = 1250.0
+target = NodePath("..")
 
 [node name="MagnetArea" type="Area3D" parent="MoveTowardsPlayer"]
 collision_layer = 0
