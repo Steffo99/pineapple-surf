@@ -9,7 +9,7 @@
 config_version=5
 
 _global_script_classes=[{
-"base": "Node3D",
+"base": "Node",
 "class": &"BaseWeapon",
 "language": &"GDScript",
 "path": "res://player/onhand/BaseWeapon.gd"
