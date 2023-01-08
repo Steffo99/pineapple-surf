@@ -6,6 +6,7 @@ var   last_fired := 0
 var   remaining  := 10
 
 @onready var ray = $RayCast3D
+var croptile = preload("res://island/CropTile.tscn")
 
 
 func _init() -> void:
@@ -37,6 +38,7 @@ func shoot() -> void:
 		var normal = ray.get_collision_normal() as Vector3
 		var point = ray.get_collision_point() as Vector3
 		var object = ray.get_collider() as Node3D
+		try_placing_seed(ray)
 #		decalInstance.position = point
 #		object.add_child(decalInstance)
 	else:
@@ -44,3 +46,21 @@ func shoot() -> void:
 		pass
 	
 	remaining -= 1
+
+
+func try_placing_seed(ray: RayCast3D) -> bool:
+	var point = ray.get_collision_point() as Vector3
+	var normal = ray.get_collision_normal() as Vector3
+	var obj = ray.get_collider() as Node3D
+	print(point, normal, obj.name)
+	if normal != Vector3(0,1,0):
+		print("Not horizontal, no plant for you :<")
+		return false
+	
+	var correct_point = point.floor()
+	var crop = croptile.instantiate() as CropTile
+	crop.position = correct_point
+	crop.debug_growth = true
+	get_tree().root.add_child(crop)
+	
+	return true
