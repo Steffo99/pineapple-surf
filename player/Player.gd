@@ -102,7 +102,7 @@ func _physics_process(delta):
 	if active_weapon and active_weapon.ammoType != BaseWeapon.AmmoType.NONE:
 		ammo_label.show()
 		if active_weapon is PeaShooter:
-			ammo_label.text = "%d peas left" % active_weapon.remaining
+			ammo_label.text = "%d seeds left" % active_weapon.remaining
 	else:
 		ammo_label.hide()
 	
