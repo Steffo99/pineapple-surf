@@ -6,10 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://lkftwgdun745" path="res://assets/pop.wav" id="3_gur2a"]
 [ext_resource type="Script" path="res://island/Pop.gd" id="4_5e7wk"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6ja5h"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xsd7y"]
 size = Vector3(1, 0.1, 1)
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_28cd1"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_gwmmn"]
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1.00001, 1.00001, 1),
 "attribute_data": PackedByteArray(143, 194, 117, 63, 183, 109, 91, 63, 31, 133, 107, 63, 219, 182, 109, 63, 31, 133, 107, 63, 183, 109, 91, 63, 143, 194, 117, 63, 219, 182, 109, 63, 143, 194, 117, 63, 183, 109, 91, 63, 31, 133, 107, 63, 183, 109, 91, 63, 31, 133, 107, 63, 219, 182, 109, 63, 143, 194, 117, 63, 219, 182, 109, 63, 143, 194, 117, 63, 183, 109, 91, 63, 31, 133, 107, 63, 183, 109, 91, 63, 31, 133, 107, 63, 219, 182, 109, 63, 143, 194, 117, 63, 219, 182, 109, 63, 143, 194, 117, 63, 183, 109, 91, 63, 31, 133, 107, 63, 183, 109, 91, 63, 31, 133, 107, 63, 219, 182, 109, 63, 143, 194, 117, 63, 219, 182, 109, 63),
@@ -35,11 +35,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
 
 [node name="PlantableArea" type="CollisionShape3D" parent="Plant"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
-shape = SubResource("BoxShape3D_6ja5h")
+shape = SubResource("BoxShape3D_xsd7y")
 
 [node name="Sprout" type="MeshInstance3D" parent="Plant"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-mesh = SubResource("ArrayMesh_28cd1")
+mesh = SubResource("ArrayMesh_gwmmn")
 skeleton = NodePath("../../..")
 
 [node name="GrowthTimer" type="Timer" parent="."]

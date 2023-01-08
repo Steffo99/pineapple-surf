@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cxa5irr1atgke" path="res://island/PyramidSmallMesh.tscn" id="5_uf8hd"]
 [ext_resource type="PackedScene" uid="uid://bknwefv5ycc3u" path="res://island/PyramidSmolMesh.tscn" id="6_klmt8"]
 [ext_resource type="PackedScene" uid="uid://boxtb3trgcy8c" path="res://island/PillarMesh.tscn" id="7_grmwj"]
-[ext_resource type="PackedScene" uid="uid://cf35yl04qtru3" path="res://island/CropTile.tscn" id="8_4ooup"]
 [ext_resource type="PackedScene" uid="uid://cwf11kdk7t64k" path="res://island/HoppityMesh.tscn" id="8_5pio0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3uyyi"]
@@ -95,22 +94,5 @@ transform = Transform3D(1, 0, 0, 0, -0.249636, 0.96834, 0, -0.96834, -0.249636, 
 transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 2.08165e-12, 4.896, 2.08165e-12)
 
 [node name="CropTiles" type="Node3D" parent="."]
-
-[node name="CropTile" parent="CropTiles" instance=ExtResource("8_4ooup")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, 8)
-
-[node name="CropTile2" parent="CropTiles" instance=ExtResource("8_4ooup")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 8)
-debug_growth_offset = 0.5
-
-[node name="CropTile3" parent="CropTiles" instance=ExtResource("8_4ooup")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 8)
-debug_growth = true
-debug_growth_offset = 0.6
-
-[node name="CropTile4" parent="CropTiles" instance=ExtResource("8_4ooup")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -2)
-debug_growth = true
-debug_growth_offset = 0.6
 
 [node name="Produce" type="Node3D" parent="."]
