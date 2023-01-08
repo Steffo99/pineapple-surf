@@ -9,7 +9,7 @@
 config_version=5
 
 _global_script_classes=[{
-"base": "Node",
+"base": "Node3D",
 "class": &"BaseWeapon",
 "language": &"GDScript",
 "path": "res://player/onhand/BaseWeapon.gd"
@@ -115,6 +115,8 @@ fire={
 
 [layer_names]
 
+3d_render/layer_1="Default"
+3d_render/layer_2="OnHand"
 3d_physics/layer_1="Default"
 3d_physics/layer_2="Pickups"
 3d_physics/layer_3="Player"

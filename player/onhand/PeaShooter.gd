@@ -24,6 +24,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	super.bob_weapon(self, _delta)
 	var current_time = Time.get_ticks_msec()
 	
 	if Input.is_action_just_pressed("fire") and current_time > (last_fired + FIRE_RATE*1000):
