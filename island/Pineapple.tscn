@@ -5,15 +5,15 @@
 [ext_resource type="AudioStream" uid="uid://lkftwgdun745" path="res://assets/pop.wav" id="3_b3ttd"]
 [ext_resource type="Script" path="res://island/Pop.gd" id="4_rn5e2"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_3af3s"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_l6rok"]
 height = 0.9
 radius = 0.3
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_77mmo"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qf6hb"]
 height = 6.0
 radius = 3.0
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_x36gm"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_w04xf"]
 height = 1.4
 radius = 0.7
 
@@ -25,7 +25,7 @@ linear_damp = 1.0
 
 [node name="Shape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
-shape = SubResource("CylinderShape3D_3af3s")
+shape = SubResource("CylinderShape3D_l6rok")
 
 [node name="PineappleMesh" parent="." instance=ExtResource("1_ndmmp")]
 
@@ -46,7 +46,7 @@ monitorable = false
 
 [node name="Shape" type="CollisionShape3D" parent="MoveTowardsPlayer/MagnetArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("CylinderShape3D_77mmo")
+shape = SubResource("CylinderShape3D_qf6hb")
 
 [node name="CaptureArea" type="Area3D" parent="MoveTowardsPlayer"]
 collision_layer = 0
@@ -55,7 +55,7 @@ monitorable = false
 
 [node name="Shape" type="CollisionShape3D" parent="MoveTowardsPlayer/CaptureArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("CylinderShape3D_x36gm")
+shape = SubResource("CylinderShape3D_w04xf")
 
 [connection signal="body_entered" from="MoveTowardsPlayer/MagnetArea" to="MoveTowardsPlayer" method="_on_magnet_area_body_entered"]
 [connection signal="body_entered" from="MoveTowardsPlayer/CaptureArea" to="MoveTowardsPlayer" method="_on_capture_area_body_entered"]

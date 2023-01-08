@@ -6,6 +6,7 @@ var   last_fired := 0
 var   remaining  := 10
 
 @onready var ray = $RayCast3D
+@onready var audio_player := $AudioStreamPlayer3D
 # FIXME: use singleton class here as well
 @onready var croptiles_container: Node3D = get_tree().root.find_child("CropTiles", true, false)
 var croptile = preload("res://island/CropTile.tscn")
@@ -32,7 +33,7 @@ func _process(_delta: float) -> void:
 
 func shoot() -> void:
 	last_fired = Time.get_ticks_msec()
-#	audio_player.play()
+	audio_player.play()
 #	$AnimationPlayer.seek(0)
 #	$AnimationPlayer.play("shoot")
 	

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcl83sr2mgwaf"]
+
+[ext_resource type="PackedScene" uid="uid://bjjjpgtdtub3r" path="res://assets/peashooter/peashooter.gltf" id="1_qt7i2"]
+
+[sub_resource type="GDScript" id="GDScript_mxvns"]
+script/source = "extends Node3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	var mesh = self.get_child(0) as MeshInstance3D
+	var mat = mesh.get_active_material(0) as BaseMaterial3D
+	mat.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+#	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.ao_enabled = true
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="peashooter" instance=ExtResource("1_qt7i2")]
+script = SubResource("GDScript_mxvns")
+
+[node name="Untitled" parent="." index="0"]
+gi_mode = 2

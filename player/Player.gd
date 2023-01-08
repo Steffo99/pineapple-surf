@@ -13,6 +13,7 @@ const AIR_ACCELERATE = 100		# Hu/39.97
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = head.get_node("Viewport/CameraViewportContainer/GameViewport/Camera")
 @onready var vport: SubViewport = head.get_node("Viewport/CameraViewportContainer/GameViewport")
+@onready var gun_vport: SubViewport = $HUD/SubViewportContainer/SubViewport
 @onready var aim_raycast: RayCast3D = head.get_node("RayCast3D")
 
 @onready var OnHand = head.get_node("OnHand")
@@ -44,6 +45,7 @@ func _ready():
 	OnHand.player = self
 	Singletons.player = self
 	vport.size = viewport_resolution
+	gun_vport.size = viewport_resolution
 
 func _physics_process(delta):
 	last_frame_input_data = input_data
@@ -86,12 +88,10 @@ func _physics_process(delta):
 	# Apply camera effects
 	var camera_yaw := 0
 	var current_speed := _get_2d_velocity().length()
-	if is_on_floor() and current_speed > 0:
-		camera_yaw = -clamp(_get_2d_velocity().length() * input_dir.x, -25, 25)
-	else:
-		camera_yaw = 0
-	
-	self.camera.global_transform = self.head.global_transform
+#	if is_on_floor() and current_speed > 0:
+#		camera_yaw = -clamp(_get_2d_velocity().length() * input_dir.x, -25, 25)
+#	else:
+#		camera_yaw = 0
 	
 #	camera.rotation.z = move_toward(
 #		0,
@@ -129,6 +129,10 @@ func _air_accelerate(wish_dir: Vector3, wish_speed: float, airaccelerate: float,
 		accelspeed = addspeed
 	
 	velocity += accelspeed * wish_dir
+
+
+func _process(delta: float) -> void:
+	self.camera.global_transform = self.head.global_transform
 
 
 func wall_running() -> bool:
