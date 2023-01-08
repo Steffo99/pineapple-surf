@@ -20,21 +20,21 @@ signal on_complete()
 func plant():
 	if growth_timer.is_stopped():
 		growth_timer.start()
-		producer.produce_with_random_force()
 		emit_signal("on_planted")
 
 
 func complete():
-	if not growth_timer.is_stopped():
-		growth_timer.stop()
-		pop_sound.play_with_random_pitch()
-		emit_signal("on_complete")
+	pop_sound.play_with_random_pitch()
+	producer.produce_with_random_force()
+	emit_signal("on_complete")
 	if debug_growth:
 		plant()
 
 
 func _process(_delta):
-	var scale_factor = 1 - (growth_timer.time_left / growth_timer.wait_time)
+	var scale_factor = 0
+	if not growth_timer.is_stopped():
+		scale_factor = 1 - (growth_timer.time_left / growth_timer.wait_time)
 	sprout_mesh.scale = Vector3(scale_factor, scale_factor, scale_factor)
 
 
