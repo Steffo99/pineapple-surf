@@ -198,15 +198,17 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -106.0
-offset_top = -35.0
+offset_left = -103.0
+offset_top = -26.0
+offset_right = -8.0
+offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("4_d7ru6")
 theme_override_font_sizes/font_size = 16
-text = "asdfasdf"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "8888 seeds left"
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="BackBufferCopy2" type="BackBufferCopy" parent="HUD"]
 position = Vector2(727, 447)
