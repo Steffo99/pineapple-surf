@@ -20,6 +20,6 @@ func collect():
 
 
 func _on_collect_area_body_entered(body: Node3D):
-	if body is Player:
+	if body is Player and not is_collected:
 		collect()
 
