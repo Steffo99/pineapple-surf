@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8pckmuf5vtll"
+path="res://.godot/imported/hoppity.obj-0b2a8c0cfc8b6e3c53f253a3f1a73568.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hoppity.obj-0b2a8c0cfc8b6e3c53f253a3f1a73568.mesh"]
+
+source_file="res://assets/island_model/hoppity.obj"
+dest_files=["res://.godot/imported/hoppity.obj-0b2a8c0cfc8b6e3c53f253a3f1a73568.mesh", "res://.godot/imported/hoppity.obj-0b2a8c0cfc8b6e3c53f253a3f1a73568.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
