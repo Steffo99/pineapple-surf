@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci0hy0d4d1476"]
+
+[ext_resource type="Script" path="res://island/CollectibleByPlayer.gd" id="1_grwn8"]
+[ext_resource type="AudioStream" uid="uid://cykcqgvvh2lrc" path="res://assets/collect.wav" id="2_0trxg"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0qal3"]
+height = 1.4
+radius = 0.7
+
+[node name="CollectibleByPlayer" type="Node3D"]
+script = ExtResource("1_grwn8")
+
+[node name="CollectSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.1, 0.5)
+stream = ExtResource("2_0trxg")
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="CollectArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="Shape" type="CollisionShape3D" parent="CollectArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_0qal3")
+
+[connection signal="body_entered" from="CollectArea" to="." method="_on_collect_area_body_entered"]

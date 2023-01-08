@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvou86mnmtloe"]
+
+[ext_resource type="Script" path="res://island/MoveTowardsPlayer.gd" id="1_bpw63"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qg6sr"]
+height = 6.0
+radius = 3.0
+
+[node name="MoveTowardsPlayer" type="Node3D" node_paths=PackedStringArray("target")]
+script = ExtResource("1_bpw63")
+force_multiplier = 1250.0
+target = NodePath("..")
+
+[node name="MagnetArea" type="Area3D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="Shape" type="CollisionShape3D" parent="MagnetArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_qg6sr")
+
+[connection signal="body_entered" from="MagnetArea" to="." method="_on_magnet_area_body_entered"]

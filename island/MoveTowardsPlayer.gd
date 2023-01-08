@@ -1,23 +1,22 @@
 extends Node
 
+
 @export var force_multiplier: float
-@export var target: RigidBody3D
-@export var capture_radius: float = 1.5
+@export_node_path(RigidBody3D) var target_path: NodePath
+@export var is_magnetized := false
 
-@onready var magnet_area: Area3D = $MagnetArea
-@onready var capture_area: Area3D = $CaptureArea
-@onready var pop: AudioStreamPlayer3D = $"../Pop"
-@onready var mesh: MeshInstance3D = $"../PineappleMesh"
+@onready var target: RigidBody3D = get_node(target_path)
 
-var captured = false
+signal magnetized()
 
 
-func capture():
-	captured = true
+func magnetize():
+	is_magnetized = true
+	emit_signal("magnetized")
 
 
 func _physics_process(delta):
-	if captured:
+	if is_magnetized and target != null:
 		var direction = Singletons.player.position - target.position
 		var force = direction.normalized() * force_multiplier * delta
 		target.apply_force(force)
@@ -25,12 +24,4 @@ func _physics_process(delta):
 
 func _on_magnet_area_body_entered(body: Node3D):
 	if body is Player:
-		print("Player captured pickup!")
-		capture()
-
-
-func _on_capture_area_body_entered(body: Node3D) -> void:
-	mesh.visible = false
-	pop.play()
-	await get_tree().create_timer(1).timeout
-	target.queue_free()
+		magnetize()
