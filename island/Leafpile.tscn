@@ -31,6 +31,7 @@ mesh = SubResource("ArrayMesh_o7j0n")
 skeleton = NodePath("../..")
 
 [node name="RespawnPad" parent="." instance=ExtResource("2_04d83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.75, 0.5)
 spawn_on_ready = true
 spawn_scene = ExtResource("3_r4rxd")
 
