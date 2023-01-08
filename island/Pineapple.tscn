@@ -38,5 +38,7 @@ target_path = NodePath("..")
 
 [node name="CanSplash" parent="." instance=ExtResource("7_3mgie")]
 
+[connection signal="collected" from="CollectibleByPlayer" to="." method="_on_collectible_by_player_collected"]
+
 [editable path="MoveTowardsPlayer"]
 [editable path="CollectibleByPlayer"]
