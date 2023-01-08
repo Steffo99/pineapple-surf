@@ -10,3 +10,4 @@ func _process(_delta):
 	if player.position.y < 0:
 		splash_sound.play()
 		player.position = spawn_point
+		player.velocity = Vector3.ZERO
