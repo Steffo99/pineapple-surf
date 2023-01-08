@@ -21,7 +21,6 @@ func plant():
 func complete():
 	if not growth_timer.is_stopped():
 		growth_timer.stop()
-		print("Playing completition sound...")
 		pop_sound.play_with_random_pitch()
 		emit_signal("on_complete")
 	if debug_growth:
