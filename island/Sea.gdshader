@@ -3,7 +3,7 @@ shader_type spatial;
 uniform float speed_x;
 uniform float speed_y;
 uniform float size;
-uniform sampler2D sea;
+uniform sampler2D sea: filter_nearest;
 
 void fragment() {
 	float x = fract(UV.x * size + sin(TIME) * speed_x);
