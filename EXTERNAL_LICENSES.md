@@ -31,3 +31,7 @@ Creative Commons: [This work is licensed under the Attribution 3.0 License.](htt
 ### [Pop, High, A (H1).wav](https://freesound.org/people/InspectorJ/sounds/411642/) by InspectorJ
 
 Creative Commons: [This work is licensed under the Attribution 4.0 License.](https://creativecommons.org/licenses/by/4.0/)
+
+### [Retro Coin Collect](https://freesound.org/people/DrMinky/sounds/166184/) by DrMinky
+
+Creative Commons: [This work is licensed under the Attribution 4.0 License.](https://creativecommons.org/licenses/by/4.0/)
