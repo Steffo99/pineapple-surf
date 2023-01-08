@@ -45,9 +45,6 @@ func _ready():
 	OnHand.player = self
 	vport.size = viewport_resolution
 
-func _process(delta):
-	pass
-
 func _physics_process(delta):
 	last_frame_input_data = input_data
 	input_data = PlayerInputData.new()

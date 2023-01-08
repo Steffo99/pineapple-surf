@@ -22,7 +22,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var current_time = Time.get_ticks_msec()
 	
 	if Input.is_action_just_pressed("fire") and current_time > (last_fired + FIRE_RATE*1000):
@@ -37,9 +37,9 @@ func shoot() -> void:
 #	$AnimationPlayer.play("shoot")
 	
 	if ray.is_colliding():
-		var normal = ray.get_collision_normal() as Vector3
-		var point = ray.get_collision_point() as Vector3
-		var object = ray.get_collider() as Node3D
+		var _normal = ray.get_collision_normal() as Vector3
+		var _point = ray.get_collision_point() as Vector3
+		var _object = ray.get_collider() as Node3D
 		try_placing_seed(ray)
 #		decalInstance.position = point
 #		object.add_child(decalInstance)

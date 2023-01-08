@@ -29,16 +29,12 @@ func _ready() -> void:
 	self._switch_weapon(BaseWeapon.WeaponSlot.ONE)
 
 
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_player_set(player: Player) -> void:
 	for weapon in weapons:
 		weapon.player = player
 
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("slot1"):
 		_switch_weapon(BaseWeapon.WeaponSlot.ONE)
 	# elif Input.is_action_just_pressed("slot2"):
@@ -54,12 +50,12 @@ func _switch_weapon(slot: BaseWeapon.WeaponSlot):
 		if weapon.weaponSlot == slot:
 			# Remove active weapon
 			if active_weapon:
-				await active_weapon.on_switch_out()
+				active_weapon.on_switch_out()
 			remove_child(active_weapon)
 			
 			# Add new weapon
 			add_child(weapon)
 			active_weapon = weapon
-			await active_weapon.on_switch_in()
+			active_weapon.on_switch_in()
 			emit_signal("weapon_switched", weapon)
 			break
