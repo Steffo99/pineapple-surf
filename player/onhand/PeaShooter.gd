@@ -6,7 +6,7 @@ var   last_fired := 0
 var   remaining  := 10
 
 @onready var ray = $RayCast3D
-@onready var audio_player := $AudioStreamPlayer3D
+@onready var audio_player: AudioStreamPlayer = $ShootSound
 # FIXME: use singleton class here as well
 @onready var croptiles_container: Node3D = get_tree().root.find_child("CropTiles", true, false)
 var croptile = preload("res://island/CropTile.tscn")
