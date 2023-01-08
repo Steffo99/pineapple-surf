@@ -23,7 +23,6 @@ shape = SubResource("CylinderShape3D_ax3vd")
 [node name="PineappleMesh" parent="." instance=ExtResource("1_ndmmp")]
 
 [node name="PopSound" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.1, 0.5)
 stream = ExtResource("3_b3ttd")
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("4_rn5e2")
@@ -33,6 +32,9 @@ target_path = NodePath("..")
 
 [node name="CollectibleByPlayer" parent="." instance=ExtResource("5_yps0c")]
 target_path = NodePath("..")
+
+[node name="CollectSound" parent="CollectibleByPlayer" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [editable path="MoveTowardsPlayer"]
 [editable path="CollectibleByPlayer"]
