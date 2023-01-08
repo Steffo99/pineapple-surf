@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cxa5irr1atgke" path="res://island/PyramidSmallMesh.tscn" id="5_uf8hd"]
 [ext_resource type="PackedScene" uid="uid://bknwefv5ycc3u" path="res://island/PyramidSmolMesh.tscn" id="6_klmt8"]
 [ext_resource type="PackedScene" uid="uid://boxtb3trgcy8c" path="res://island/PillarMesh.tscn" id="7_grmwj"]
-[ext_resource type="PackedScene" uid="uid://cwf11kdk7t64k" path="res://island/HoppityMesh.tscn" id="8_5pio0"]
+[ext_resource type="PackedScene" path="res://island/HoppityMesh.tscn" id="8_5pio0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3uyyi"]
 render_priority = 0
