@@ -8,7 +8,7 @@ transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("1_x2h5q")
 texture_filter = 0
-billboard_mode = 1
+billboard_mode = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_sjes8"]
 _surfaces = [{
