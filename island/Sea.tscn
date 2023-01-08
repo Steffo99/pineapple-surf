@@ -1,20 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh5blytk6vmdu"]
+[gd_scene load_steps=4 format=3 uid="uid://dh5blytk6vmdu"]
 
-[ext_resource type="Shader" path="res://island/Sea.gdshader" id="1_hkdu5"]
-[ext_resource type="Texture2D" uid="uid://bdoifsf6k0qb8" path="res://assets/water_tile.png" id="2_n5in5"]
+[ext_resource type="Script" path="res://island/Sea.gd" id="1_45vpg"]
+[ext_resource type="PackedScene" uid="uid://c7lblmilr3gob" path="res://island/SeaMesh.tscn" id="1_ej5r1"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3uyyi"]
-render_priority = 0
-shader = ExtResource("1_hkdu5")
-shader_parameter/speed_x = 1.0
-shader_parameter/speed_y = 0.1
-shader_parameter/size = 1000.0
-shader_parameter/sea = ExtResource("2_n5in5")
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_hpkdw"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_4ibso"]
-material = SubResource("ShaderMaterial_3uyyi")
-size = Vector2(1000, 1000)
+[node name="Sea" type="Node3D"]
+script = ExtResource("1_45vpg")
 
-[node name="Sea" type="MeshInstance3D"]
-mesh = SubResource("PlaneMesh_4ibso")
-skeleton = NodePath("../..")
+[node name="SeaMesh" parent="." instance=ExtResource("1_ej5r1")]
+
+[node name="SplashArea" type="Area3D" parent="."]
+
+[node name="Shape" type="CollisionShape3D" parent="SplashArea"]
+shape = SubResource("WorldBoundaryShape3D_hpkdw")
+
+[connection signal="body_entered" from="SplashArea" to="." method="_on_splash_area_body_entered"]

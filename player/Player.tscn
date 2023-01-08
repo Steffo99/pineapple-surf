@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://player/OnHand.gd" id="3_3rcjl"]
 [ext_resource type="Theme" uid="uid://c5a1nyqumj46j" path="res://menu/menu_theme.tres" id="4_d7ru6"]
 [ext_resource type="Shader" path="res://player/crosshair.gdshader" id="4_dut1p"]
-[ext_resource type="PackedScene" uid="uid://dc147tdie7oem" path="res://player/SplashController.tscn" id="6_hf66s"]
+[ext_resource type="PackedScene" uid="uid://bj4d3a0jxgvpu" path="res://island/CanSplash.tscn" id="6_la1ga"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqp8x"]
 metallic_specular = 0.0
@@ -263,5 +263,6 @@ metadata/_edit_lock_ = true
 
 [node name="RigidDynamicBody3D" type="RigidBody3D" parent="."]
 
-[node name="SplashController" parent="." instance=ExtResource("6_hf66s")]
-target_path = NodePath("..")
+[node name="CanSplash" parent="." instance=ExtResource("6_la1ga")]
+
+[connection signal="splashed" from="CanSplash" to="." method="respawn"]

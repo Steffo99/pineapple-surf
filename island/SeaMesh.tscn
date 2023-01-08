@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7lblmilr3gob"]
+
+[ext_resource type="Shader" path="res://island/Sea.gdshader" id="1_tu2de"]
+[ext_resource type="Texture2D" uid="uid://bdoifsf6k0qb8" path="res://assets/water_tile.png" id="2_c8qvh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3uyyi"]
+render_priority = 0
+shader = ExtResource("1_tu2de")
+shader_parameter/speed_x = 1.0
+shader_parameter/speed_y = 0.1
+shader_parameter/size = 1000.0
+shader_parameter/sea = ExtResource("2_c8qvh")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4ibso"]
+material = SubResource("ShaderMaterial_3uyyi")
+size = Vector2(1000, 1000)
+
+[node name="SeaMesh" type="MeshInstance3D"]
+mesh = SubResource("PlaneMesh_4ibso")
+skeleton = NodePath("../..")

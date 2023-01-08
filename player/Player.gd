@@ -15,6 +15,8 @@ const AIR_ACCELERATE = 100		# Hu/39.97
 @onready var vport: SubViewport = head.get_node("Viewport/CameraViewportContainer/GameViewport")
 @onready var gun_vport: SubViewport = $HUD/SubViewportContainer/SubViewport
 @onready var aim_raycast: RayCast3D = head.get_node("RayCast3D")
+@onready var initial_position: Vector3 = position
+@onready var initial_rotation: Vector3 = rotation
 
 @onready var OnHand = head.get_node("OnHand")
 @onready var active_weapon: BaseWeapon:
@@ -152,3 +154,9 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		var vec = event.relative
 		self.mouse_movement = Vector2(vec.y / 10, vec.x / 10)
+
+
+func respawn():
+	position = initial_position
+	rotation = initial_rotation
+	velocity = Vector3.ZERO
