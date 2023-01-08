@@ -53,10 +53,13 @@ func shoot() -> void:
 func try_placing_seed(ray: RayCast3D) -> bool:
 	var point = ray.get_collision_point() as Vector3
 	var normal = ray.get_collision_normal() as Vector3
-	var obj = ray.get_collider() as Node3D
-	print(point, normal, obj.name)
+	var coll = ray.get_collider() as CollisionObject3D
 	if normal != Vector3(0,1,0):
 		print("Not horizontal, no plant for you :<")
+		return false
+		
+	if coll.collision_layer == 0b10000:
+		print("Colliding with planted seed, not planting again")
 		return false
 	
 	var correct_point = point.floor()
