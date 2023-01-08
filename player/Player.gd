@@ -14,7 +14,6 @@ const AIR_ACCELERATE = 100		# Hu/39.97
 @onready var camera: Camera3D = head.get_node("Viewport/CameraViewportContainer/GameViewport/Camera")
 @onready var vport: SubViewport = head.get_node("Viewport/CameraViewportContainer/GameViewport")
 @onready var aim_raycast: RayCast3D = head.get_node("RayCast3D")
-@onready var torch: SpotLight3D = head.get_node("Torch")
 
 @onready var OnHand = head.get_node("OnHand")
 @onready var active_weapon: BaseWeapon:
@@ -43,6 +42,7 @@ func _get_2d_velocity() -> Vector2:
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	OnHand.player = self
+	Singletons.player = self
 	vport.size = viewport_resolution
 
 func _physics_process(delta):
@@ -144,9 +144,6 @@ func wall_running() -> bool:
 func _input(event):
 	if event is InputEventKey and event.keycode == KEY_ESCAPE:
 		get_tree().quit()
-	
-	if Input.is_action_just_pressed("toggle_torch"):
-		torch.visible = !torch.visible
 	
 	if event is InputEventMouseMotion:
 		var vec = event.relative

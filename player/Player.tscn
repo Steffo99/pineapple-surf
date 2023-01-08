@@ -103,6 +103,7 @@ shader_parameter/spacing = 0.006
 shader_parameter/spread = 0.902
 
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 5
 slide_on_ceiling = false
 floor_constant_speed = true
 script = ExtResource("1_rujcr")
@@ -110,16 +111,6 @@ script = ExtResource("1_rujcr")
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54, 0)
 script = ExtResource("2_ohlgu")
-
-[node name="Torch" type="SpotLight3D" parent="Head"]
-visible = false
-light_energy = 5.5
-light_indirect_energy = 2.0
-light_cull_mask = 4294967293
-shadow_enabled = true
-spot_range = 28.8
-spot_angle = 23.1165
-spot_angle_attenuation = 0.466516
 
 [node name="RayCast3D" type="RayCast3D" parent="Head"]
 target_position = Vector3(0, 0, -1.4)
@@ -138,6 +129,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CameraViewportContainer" type="SubViewportContainer" parent="Head/Viewport"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -177,6 +169,7 @@ theme = SubResource("Theme_smyke")
 
 [node name="FPS_Label" type="Label" parent="HUD"]
 visible = false
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -189,7 +182,7 @@ horizontal_alignment = 2
 script = SubResource("GDScript_iiadi")
 
 [node name="PointsSpawner" type="Control" parent="HUD"]
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -200,6 +193,7 @@ grow_vertical = 2
 script = SubResource("GDScript_5d122")
 
 [node name="AmmoLabel" type="Label" parent="HUD"]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -224,6 +218,7 @@ metadata/_edit_lock_ = true
 [node name="SubViewportContainer" type="SubViewportContainer" parent="HUD"]
 visible = false
 show_behind_parent = true
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -246,6 +241,7 @@ MainCamera = NodePath("../../../../Head/Viewport/CameraViewportContainer/GameVie
 
 [node name="Crosshair" type="ColorRect" parent="HUD"]
 material = SubResource("ShaderMaterial_2p6rt")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
