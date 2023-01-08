@@ -19,13 +19,14 @@ var player: Player:
 
 
 var weapons: Array = [
+	load("res://player/onhand/PeaShooter.tscn").instantiate()
 	# load("res://Player/Weapons/Arm.tscn").instantiate(),
 	# load("res://Player/Weapons/ak47.tscn").instantiate(),
 ]
 
 
 func _ready() -> void:
-	self._switch_weapon(BaseWeapon.WeaponSlot.THREE)
+	self._switch_weapon(BaseWeapon.WeaponSlot.ONE)
 
 
 func _process(delta: float) -> void:
@@ -40,10 +41,10 @@ func _on_player_set(player: Player) -> void:
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("slot1"):
 		_switch_weapon(BaseWeapon.WeaponSlot.ONE)
-	elif Input.is_action_just_pressed("slot2"):
-		_switch_weapon(BaseWeapon.WeaponSlot.TWO)
-	elif Input.is_action_just_pressed("slot3"):
-		_switch_weapon(BaseWeapon.WeaponSlot.THREE)
+	# elif Input.is_action_just_pressed("slot2"):
+	# 	_switch_weapon(BaseWeapon.WeaponSlot.TWO)
+	# elif Input.is_action_just_pressed("slot3"):
+	# 	_switch_weapon(BaseWeapon.WeaponSlot.THREE)
 
 
 func _switch_weapon(slot: BaseWeapon.WeaponSlot):

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu53ekfgwammu"]
+
+[ext_resource type="Script" path="res://player/onhand/PeaShooter.gd" id="1_bl35a"]
+
+[node name="PeaShooter" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_bl35a")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(1000, 0, 0)

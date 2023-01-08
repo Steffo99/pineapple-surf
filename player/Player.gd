@@ -3,7 +3,7 @@ class_name Player
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-const MOUSE_SENSITIVITY = 2.25
+const MOUSE_SENSITIVITY = 5 # 2.25
 
 const MAX_AIR_WISH_SPEED = 20
 const AIR_ACCELERATE = 100		# Hu/39.97
@@ -21,7 +21,7 @@ const AIR_ACCELERATE = 100		# Hu/39.97
 	get: return OnHand.active_weapon
 
 # DEBUG NODES
-@onready var debug_speed_label = $HUD/Speed_Label
+@onready var ammo_label = $HUD/AmmoLabel
 
 var last_frame_input_data: PlayerInputData = PlayerInputData.new()
 var input_data: PlayerInputData = PlayerInputData.new()
@@ -102,7 +102,12 @@ func _physics_process(delta):
 #		delta
 #	) * 2.5
 	
-	debug_speed_label.text = "%0.2f" % current_speed
+	if active_weapon and active_weapon.ammoType != BaseWeapon.AmmoType.NONE:
+		ammo_label.show()
+		if active_weapon is PeaShooter:
+			ammo_label.text = "%d peas left" % active_weapon.remaining
+	else:
+		ammo_label.hide()
 	
 	move_and_slide()
 

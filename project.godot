@@ -12,7 +12,12 @@ _global_script_classes=[{
 "base": "Node",
 "class": &"BaseWeapon",
 "language": &"GDScript",
-"path": "res://player/BaseWeapon.gd"
+"path": "res://player/onhand/BaseWeapon.gd"
+}, {
+"base": "BaseWeapon",
+"class": &"PeaShooter",
+"language": &"GDScript",
+"path": "res://player/onhand/PeaShooter.gd"
 }, {
 "base": "CharacterBody3D",
 "class": &"Player",
@@ -26,6 +31,7 @@ _global_script_classes=[{
 }]
 _global_script_class_icons={
 "BaseWeapon": "",
+"PeaShooter": "",
 "Player": "",
 "PlayerInputData": ""
 }
@@ -94,6 +100,11 @@ slot3={
 toggle_torch={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"unicode":0,"echo":false,"script":null)
+]
+}
+fire={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"pressed":false,"double_click":false,"script":null)
 ]
 }
 

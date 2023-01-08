@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://b5i1sqd88wlle"]
+[gd_scene load_steps=17 format=3 uid="uid://b5i1sqd88wlle"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_rujcr"]
 [ext_resource type="Script" path="res://player/Head.gd" id="2_ohlgu"]
 [ext_resource type="Script" path="res://player/OnHand.gd" id="3_3rcjl"]
+[ext_resource type="Theme" uid="uid://c5a1nyqumj46j" path="res://menu/menu_theme.tres" id="4_d7ru6"]
 [ext_resource type="Shader" path="res://player/crosshair.gdshader" id="4_dut1p"]
 [ext_resource type="Script" path="res://player/SplashController.gd" id="5_wnbq8"]
 [ext_resource type="AudioStream" uid="uid://xretxahxbqdr" path="res://assets/splash.ogg" id="6_xi537"]
@@ -137,7 +138,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CameraViewportContainer" type="SubViewportContainer" parent="Head/Viewport"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -176,7 +176,6 @@ theme = SubResource("Theme_smyke")
 
 [node name="FPS_Label" type="Label" parent="HUD"]
 visible = false
-layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -189,7 +188,7 @@ horizontal_alignment = 2
 script = SubResource("GDScript_iiadi")
 
 [node name="PointsSpawner" type="Control" parent="HUD"]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -199,20 +198,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_5d122")
 
-[node name="Speed_Label" type="Label" parent="HUD"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -53.0
-offset_top = 36.0
-offset_right = 53.0
-offset_bottom = 71.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="AmmoLabel" type="Label" parent="HUD"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -106.0
+offset_top = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("4_d7ru6")
+theme_override_font_sizes/font_size = 16
+text = "asdfasdf"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -220,11 +218,11 @@ vertical_alignment = 1
 position = Vector2(727, 447)
 scale = Vector2(7.61, 4.89)
 copy_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="HUD"]
 visible = false
 show_behind_parent = true
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -247,18 +245,19 @@ MainCamera = NodePath("../../../../Head/Viewport/CameraViewportContainer/GameVie
 
 [node name="Crosshair" type="ColorRect" parent="HUD"]
 material = SubResource("ShaderMaterial_2p6rt")
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="HUD"]
 visible = false
 y_sort_enabled = true
 position = Vector2(140, 79)
 scale = Vector2(1.65, 1)
+metadata/_edit_lock_ = true
 
 [node name="RigidDynamicBody3D" type="RigidBody3D" parent="."]
 

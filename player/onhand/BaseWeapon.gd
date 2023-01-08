@@ -7,10 +7,16 @@ enum WeaponSlot {
 	THREE
 }
 
+enum AmmoType {
+	NONE,
+	SINGLE
+}
+
 @export_range(0,1) var MOUSE_MOVEMENT_BOB_AMOUNT := 0.5
 
 var player: Player
 var weaponSlot: WeaponSlot = WeaponSlot.ONE
+var ammoType: AmmoType = AmmoType.NONE
 var mouse_movement := Vector2.ZERO
 
 func on_switch_in():
