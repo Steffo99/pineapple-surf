@@ -1,7 +1,7 @@
 extends BaseWeapon
 class_name PeaShooter
 
-const FIRE_RATE  := 0.15
+const FIRE_RATE  := 0.06
 var   last_fired := 0
 var   remaining  := 10
 
