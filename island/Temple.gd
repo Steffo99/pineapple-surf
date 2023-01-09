@@ -7,7 +7,7 @@ var is_exploded: bool = false
 
 @export var size_per_prayer: float = 0.05
 @export var pitch_per_prayer: float = 0.02
-@export var explode_at: int = 150
+@export var explode_at: int = 1
 @export var explosion_scene: PackedScene = preload("res://island/FunnyExplosion.tscn")
 
 @onready var player: Player = Singletons.player
@@ -49,11 +49,7 @@ func try_to_explode():
 func win():
 	print("YOU WIN!")
 	print("Time: ", time)
-	Singletons.should_upload = true
-	Singletons.time = time
-	$"/root/BaseScene".move_to_menu()
-	
-	# get_tree().change_scene_to_file("res://base/BaseScene.tscn")
+	$"/root/BaseScene/ScoreboardContainer".upload_score(time)
 	queue_free()
 
 
