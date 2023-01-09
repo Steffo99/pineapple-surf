@@ -3,7 +3,7 @@ extends Node3D
 
 var score: int = 0
 var time: float = 0.0
-var exploded: bool = false
+var is_exploded: bool = false
 
 @export var size_per_prayer: float = 0.05
 @export var pitch_per_prayer: float = 0.02
@@ -36,8 +36,8 @@ func try_to_collect_fruit():
 # "is it gonna explode tho"
 # --Ichi
 func try_to_explode():
-	if not exploded and score >= explode_at:
-		exploded = true
+	if not is_exploded and score >= explode_at:
+		is_exploded = true
 		var explosion = explosion_scene.instantiate()
 		var explosion_sound = explosion.get_node("ExplosionSound")
 		explosion.position = pineglasses.position + Vector3.UP
@@ -53,7 +53,7 @@ func win():
 
 
 func _process(delta):
-	if not exploded:
+	if not is_exploded:
 		time += delta
 
 
