@@ -1,6 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 export_presets.cfg
+exports/
 
 # Steffo's random assets folder
 available-assets/
