@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cm0apcnq0f26s"]
+[gd_scene load_steps=8 format=3 uid="uid://cm0apcnq0f26s"]
 
 [ext_resource type="Texture2D" uid="uid://cdpn34mdaq545" path="res://assets/island_model/texture_1.png" id="1_e06sb"]
 [ext_resource type="Script" path="res://island/Seeds.gd" id="1_ndq82"]
+[ext_resource type="AudioStream" uid="uid://4bkqsij7u6ss" path="res://assets/collect_2.wav" id="4_yfll2"]
 [ext_resource type="PackedScene" uid="uid://ci0hy0d4d1476" path="res://island/CollectibleByPlayer.tscn" id="5_xl41o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_meps2"]
@@ -46,6 +47,9 @@ shape = SubResource("SphereShape3D_geieh")
 
 [node name="CollectibleByPlayer" parent="." instance=ExtResource("5_xl41o")]
 target_path = NodePath("..")
+
+[node name="CollectSound" parent="CollectibleByPlayer" index="0"]
+stream = ExtResource("4_yfll2")
 
 [connection signal="collected" from="CollectibleByPlayer" to="." method="_on_collectible_by_player_collected"]
 

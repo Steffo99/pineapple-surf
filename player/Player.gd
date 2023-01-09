@@ -130,6 +130,9 @@ func _process(_delta: float) -> void:
 
 
 func _input(event):
+	if event.is_action_pressed("respawn"):
+		respawn()
+
 	if event is InputEventKey and event.keycode == KEY_ESCAPE:
 		get_tree().quit()
 	

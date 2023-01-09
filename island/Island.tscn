@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bg88gc1w1gw5m"]
+[gd_scene load_steps=16 format=3 uid="uid://bg88gc1w1gw5m"]
 
 [ext_resource type="PackedScene" uid="uid://dh5blytk6vmdu" path="res://island/Sea.tscn" id="1_e0hpm"]
 [ext_resource type="PackedScene" uid="uid://b5i1sqd88wlle" path="res://player/Player.tscn" id="3_5378m"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://boxtb3trgcy8c" path="res://island/PillarMesh.tscn" id="7_grmwj"]
 [ext_resource type="PackedScene" uid="uid://cwf11kdk7t64k" path="res://island/HoppityMesh.tscn" id="8_5pio0"]
 [ext_resource type="PackedScene" uid="uid://dutcugv574855" path="res://island/Leafpile.tscn" id="9_472aa"]
+[ext_resource type="PackedScene" uid="uid://v7bv81krh12e" path="res://island/Pineapple.tscn" id="10_dlxm4"]
 
 [sub_resource type="Gradient" id="Gradient_shcpx"]
 interpolation_mode = 2
@@ -96,7 +97,7 @@ transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e
 [node name="CropTiles" type="Node3D" parent="."]
 
 [node name="Leafpile" parent="CropTiles" instance=ExtResource("9_472aa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, -4)
 
 [node name="Leafpile2" parent="CropTiles" instance=ExtResource("9_472aa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3, -4)
@@ -168,3 +169,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 59)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, 60)
 
 [node name="Produce" type="Node3D" parent="."]
+
+[node name="Pineapple" parent="Produce" instance=ExtResource("10_dlxm4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 5)
