@@ -35,3 +35,7 @@ Creative Commons: [This work is licensed under the Attribution 4.0 License.](htt
 ### [Retro Coin Collect](https://freesound.org/people/DrMinky/sounds/166184/) by DrMinky
 
 Creative Commons: [This work is licensed under the Attribution 4.0 License.](https://creativecommons.org/licenses/by/4.0/)
+
+### [level up.wav](https://freesound.org/people/MakoFox/sounds/126422/) by MakoFox
+
+Creative Commons: [This work is licensed under the Attribution 3.0 License.](https://creativecommons.org/licenses/by/3.0/)
