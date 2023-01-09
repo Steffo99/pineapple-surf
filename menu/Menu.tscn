@@ -17,6 +17,7 @@ theme = ExtResource("1_mkxnc")
 script = ExtResource("2_6amk3")
 
 [node name="Panel" type="TextureRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -26,6 +27,7 @@ texture = ExtResource("2_q14jx")
 stretch_mode = 1
 
 [node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,29 +36,39 @@ grow_vertical = 2
 alignment = 1
 
 [node name="Authors" type="Label" parent="Content"]
-offset_right = 284.0
-offset_bottom = 18.0
+layout_mode = 2
 text = "A game by Ichicoro and Steffo"
 horizontal_alignment = 1
 
 [node name="Title" type="Label" parent="Content"]
-offset_top = 25.0
-offset_right = 284.0
-offset_bottom = 75.0
+layout_mode = 2
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 48
 text = "Harvest"
 horizontal_alignment = 1
 
-[node name="Control" type="Control" parent="Content"]
-layout_mode = 3
-anchors_preset = 0
-offset_top = 110.0
-offset_right = 284.0
-offset_bottom = 110.0
+[node name="Inputs" type="Control" parent="Content"]
+layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
 
-[node name="Play" type="Button" parent="Content/Control"]
+[node name="NameInput" type="TextEdit" parent="Content/Inputs"]
+custom_minimum_size = Vector2(140, 28)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+placeholder_text = "What's your name?"
+
+[node name="Buttons" type="Control" parent="Content"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Play" type="Button" parent="Content/Buttons"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -74,11 +86,10 @@ theme_override_font_sizes/font_size = 0
 text = "Play"
 
 [node name="Authors2" type="Label" parent="Content"]
-offset_top = 142.0
-offset_right = 284.0
-offset_bottom = 160.0
+layout_mode = 2
 size_flags_vertical = 1
 text = "Ludum Dare 52 - Harvest"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="Content/Control/Play" to="." method="play"]
+[connection signal="text_changed" from="Content/Inputs/NameInput" to="." method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="Content/Buttons/Play" to="." method="play"]
