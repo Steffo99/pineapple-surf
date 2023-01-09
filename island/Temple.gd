@@ -32,6 +32,8 @@ func try_to_collect_fruit():
 			pineglasses_sound.stop()
 
 
+# "is it gonna explode tho"
+# --Ichi
 func try_to_explode():
 	if not exploded and score >= explode_at:
 		exploded = true
