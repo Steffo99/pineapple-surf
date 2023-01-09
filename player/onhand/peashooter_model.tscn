@@ -11,14 +11,9 @@ script/source = "extends Node3D
 func _ready() -> void:
 	var mesh = self.get_child(0) as MeshInstance3D
 	var mat = mesh.get_active_material(0) as BaseMaterial3D
-#	mat.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
-	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.texture_filter = BaseMaterial3D.TEXTURE_FILTER_NEAREST
+#	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 #	mat.ao_enabled = true
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 "
 
 [sub_resource type="Image" id="Image_435th"]

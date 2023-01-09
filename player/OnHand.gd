@@ -15,7 +15,8 @@ var player: Player:
 		return player
 	set(p):
 		player = p
-		self._on_player_set(p)
+		for weapon in weapons:
+			weapon.player = player
 
 
 var weapons: Array = [
@@ -27,11 +28,6 @@ var weapons: Array = [
 
 func _ready() -> void:
 	self._switch_weapon(BaseWeapon.WeaponSlot.ONE)
-
-
-func _on_player_set(player: Player) -> void:
-	for weapon in weapons:
-		weapon.player = player
 
 
 func _input(_event: InputEvent) -> void:
@@ -51,7 +47,7 @@ func _switch_weapon(slot: BaseWeapon.WeaponSlot):
 			# Remove active weapon
 			if active_weapon:
 				active_weapon.on_switch_out()
-			remove_child(active_weapon)
+				remove_child(active_weapon)
 			
 			# Add new weapon
 			add_child(weapon)

@@ -47,6 +47,5 @@ func bob_weapon(node: Node3D, delta: float):
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		var vec = event.relative
 		self.last_mouse_movement = event.relative
 		

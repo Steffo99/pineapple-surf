@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ci0hy0d4d1476" path="res://island/CollectibleByPlayer.tscn" id="5_yps0c"]
 [ext_resource type="PackedScene" uid="uid://bj4d3a0jxgvpu" path="res://island/CanSplash.tscn" id="7_3mgie"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_e5jtb"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q83gf"]
 height = 0.9
 radius = 0.3
 
@@ -21,7 +21,7 @@ script = ExtResource("1_sbec5")
 
 [node name="Shape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
-shape = SubResource("CylinderShape3D_e5jtb")
+shape = SubResource("CylinderShape3D_q83gf")
 
 [node name="PineappleMesh" parent="." instance=ExtResource("1_ndmmp")]
 

@@ -27,7 +27,7 @@ script/source = "extends Camera3D
 
 @export var MainCamera: Camera3D
 
-func _process(delta):
+func _process(_delta):
 	if not MainCamera:
 		return
 	
@@ -79,7 +79,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CameraViewportContainer" type="SubViewportContainer" parent="Head/Viewport"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -119,7 +118,6 @@ theme = SubResource("Theme_smyke")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="HUD"]
 show_behind_parent = true
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -149,7 +147,6 @@ scale = Vector2(1.65, 1)
 metadata/_edit_lock_ = true
 
 [node name="AmmoLabel" type="Label" parent="HUD"]
-layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -169,7 +166,6 @@ vertical_alignment = 2
 
 [node name="Crosshair" type="ColorRect" parent="HUD"]
 material = SubResource("ShaderMaterial_2p6rt")
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
