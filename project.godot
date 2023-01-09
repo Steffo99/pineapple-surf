@@ -9,6 +9,11 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Node",
+"class": &"BaseScene",
+"language": &"GDScript",
+"path": "res://base/BaseScene.gd"
+}, {
 "base": "Node3D",
 "class": &"BaseWeapon",
 "language": &"GDScript",
@@ -40,6 +45,7 @@ _global_script_classes=[{
 "path": "res://player/PlayerInputData.gd"
 }]
 _global_script_class_icons={
+"BaseScene": "",
 "BaseWeapon": "",
 "CanSplash": "",
 "CropTile": "",
@@ -51,7 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="LD52"
-run/main_scene="res://base/Base.tscn"
+run/main_scene="res://base/BaseScene.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 boot_splash/bg_color=Color(0.231373, 0.490196, 0.309804, 1)
 config/icon="res://assets/icon.svg"
