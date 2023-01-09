@@ -13,10 +13,6 @@ target_position = Vector3(1000, 0, 0)
 collision_mask = 24
 collide_with_areas = true
 
-[node name="peashooter2" parent="." instance=ExtResource("2_ra8vl")]
-transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 0.6, -0.8, 0.5)
-visible = false
-
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_uhlty")
 max_polyphony = 10
