@@ -69,16 +69,31 @@ skeleton = NodePath("../../..")
 metadata/_edit_lock_ = true
 
 [node name="PillarMesh" parent="World" instance=ExtResource("7_grmwj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 9)
-metadata/_edit_lock_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 25)
+
+[node name="PillarMesh5" parent="World" instance=ExtResource("7_grmwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 43)
+
+[node name="PillarMesh6" parent="World" instance=ExtResource("7_grmwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, 44)
+
+[node name="PillarMesh7" parent="World" instance=ExtResource("7_grmwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, 32)
+
+[node name="PillarMesh8" parent="World" instance=ExtResource("7_grmwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 33)
+
+[node name="PillarMesh9" parent="World" instance=ExtResource("7_grmwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 24)
 
 [node name="PillarMesh2" parent="World" instance=ExtResource("7_grmwj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 7)
-metadata/_edit_lock_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 28)
+
+[node name="PillarMesh4" parent="World" instance=ExtResource("7_grmwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 37)
 
 [node name="PillarMesh3" parent="World" instance=ExtResource("7_grmwj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 5)
-metadata/_edit_lock_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 38)
 
 [node name="HoppityMesh" parent="World" instance=ExtResource("8_5pio0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -27, 0, 53)
