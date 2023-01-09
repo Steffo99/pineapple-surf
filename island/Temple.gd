@@ -6,7 +6,7 @@ var exploded = false
 
 @export var size_per_prayer: float = 0.05
 @export var pitch_per_prayer: float = 0.02
-@export var explode_at: int = 1
+@export var explode_at: int = 150
 @export var explosion_scene: PackedScene = preload("res://island/FunnyExplosion.tscn")
 
 @onready var player: Player = Singletons.player
