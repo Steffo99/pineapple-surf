@@ -5,7 +5,7 @@ const FIRE_RATE  := 0.15
 var   last_fired := 0
 var   remaining  := 10
 
-@onready var ray = $RayCast3D
+@onready var raycast = $RayCast3D
 @onready var audio_player: AudioStreamPlayer = $ShootSound
 # FIXME: use singleton class here as well
 @onready var croptiles_container: Node3D = get_tree().root.find_child("CropTiles", true, false)
@@ -38,11 +38,11 @@ func shoot() -> void:
 #	$AnimationPlayer.seek(0)
 #	$AnimationPlayer.play("shoot")
 	
-	if ray.is_colliding():
-		var _normal = ray.get_collision_normal() as Vector3
-		var _point = ray.get_collision_point() as Vector3
-		var _object = ray.get_collider() as Node3D
-		try_placing_seed(ray)
+	if raycast.is_colliding():
+		var _normal = raycast.get_collision_normal() as Vector3
+		var _point = raycast.get_collision_point() as Vector3
+		var _object = raycast.get_collider() as Node3D
+		try_placing_seed()
 #		decalInstance.position = point
 #		object.add_child(decalInstance)
 	else:
@@ -52,10 +52,10 @@ func shoot() -> void:
 	remaining -= 1
 
 
-func try_placing_seed(ray: RayCast3D) -> bool:
-	var point = ray.get_collision_point() as Vector3
-	var normal = ray.get_collision_normal() as Vector3
-	var coll = ray.get_collider() as CollisionObject3D
+func try_placing_seed() -> bool:
+	var point = raycast.get_collision_point() as Vector3
+	var normal = raycast.get_collision_normal() as Vector3
+	var coll = raycast.get_collider() as CollisionObject3D
 	var similarity = normal.dot(Vector3.UP)
 
 	if similarity < 0.95:
