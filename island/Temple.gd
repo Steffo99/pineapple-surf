@@ -1,8 +1,9 @@
 extends Node3D
 
 
-var score = 0
-var exploded = false
+var score: int = 0
+var time: float = 0.0
+var exploded: bool = false
 
 @export var size_per_prayer: float = 0.05
 @export var pitch_per_prayer: float = 0.02
@@ -47,7 +48,13 @@ func try_to_explode():
 
 func win():
 	print("YOU WIN!")
+	print("Time: ", time)
 	queue_free()
+
+
+func _process(delta):
+	if not exploded:
+		time += delta
 
 
 func _physics_process(_delta):
