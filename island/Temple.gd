@@ -49,6 +49,9 @@ func try_to_explode():
 func win():
 	print("YOU WIN!")
 	print("Time: ", time)
+	Singletons.time = time
+	
+	# get_tree().change_scene_to_file("res://base/BaseScene.tscn")
 	queue_free()
 
 
