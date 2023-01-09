@@ -13,6 +13,7 @@ func change_scene(path: String):
 
 func start_game():
 	print("Starting game...")
+	Singletons.score = 0
 	change_scene("res://island/Island.tscn")
 
 

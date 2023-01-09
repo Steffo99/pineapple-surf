@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bgqpv20hlou2y"
+path="res://.godot/imported/pineglasses.obj-0618e7efc11f196892fc5dbb92c8519b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pineglasses.obj-0618e7efc11f196892fc5dbb92c8519b.mesh"]
+
+source_file="res://assets/island_model/pineglasses.obj"
+dest_files=["res://.godot/imported/pineglasses.obj-0618e7efc11f196892fc5dbb92c8519b.mesh", "res://.godot/imported/pineglasses.obj-0618e7efc11f196892fc5dbb92c8519b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

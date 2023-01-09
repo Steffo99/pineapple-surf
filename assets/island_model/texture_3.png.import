@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8pyyod83b2ge"
-path.s3tc="res://.godot/imported/pineglasses.png-3c8c710eb23d2af3b8bb45908afa1208.s3tc.ctex"
-path.etc2="res://.godot/imported/pineglasses.png-3c8c710eb23d2af3b8bb45908afa1208.etc2.ctex"
+uid="uid://ceucx3sfu3345"
+path.s3tc="res://.godot/imported/texture_3.png-d3dad1a958de1723fe1a424bdcd308b3.s3tc.ctex"
+path.etc2="res://.godot/imported/texture_3.png-d3dad1a958de1723fe1a424bdcd308b3.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/pineglasses.png"
-dest_files=["res://.godot/imported/pineglasses.png-3c8c710eb23d2af3b8bb45908afa1208.s3tc.ctex", "res://.godot/imported/pineglasses.png-3c8c710eb23d2af3b8bb45908afa1208.etc2.ctex"]
+source_file="res://assets/island_model/texture_3.png"
+dest_files=["res://.godot/imported/texture_3.png-d3dad1a958de1723fe1a424bdcd308b3.s3tc.ctex", "res://.godot/imported/texture_3.png-d3dad1a958de1723fe1a424bdcd308b3.etc2.ctex"]
 
 [params]
 

@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://dp3n3j0r2ufhw"]
+
+[ext_resource type="PackedScene" uid="uid://c7dmda5c5ju28" path="res://island/TempleMesh.tscn" id="1_e3qkq"]
+[ext_resource type="Script" path="res://island/Temple.gd" id="1_ij5av"]
+[ext_resource type="Texture2D" uid="uid://ceucx3sfu3345" path="res://assets/island_model/texture_3.png" id="2_mx23r"]
+[ext_resource type="AudioStream" uid="uid://dje4pc3vdya0d" path="res://assets/sine.wav" id="4_wahrh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2cin"]
+resource_name = "material3"
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("2_mx23r")
+texture_filter = 0
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0bo7y"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, 0, 1.00001, 1.00001, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 1, 0, 0, 0),
+"material": SubResource("StandardMaterial3D_c2cin"),
+"name": "material3",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 191, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2m5mr"]
+size = Vector3(2, 2, 2)
+
+[node name="Temple" type="Node3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_ij5av")
+
+[node name="TempleMesh" parent="." instance=ExtResource("1_e3qkq")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 0, -3)
+skeleton = NodePath("../../..")
+
+[node name="Pineglasses" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.93403e-07, 0, 3, 0, 3, 0, -3, 0, 3.93403e-07, 1, 5, -1)
+mesh = SubResource("ArrayMesh_0bo7y")
+skeleton = NodePath("../../..")
+
+[node name="Growth" type="AudioStreamPlayer3D" parent="Pineglasses"]
+transform = Transform3D(4.37114e-08, 0, -0.333333, 0, 0.333333, 0, 0.333333, 0, 4.37114e-08, 0, 0, -1.2219e-06)
+stream = ExtResource("4_wahrh")
+
+[node name="PrayerArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 5, -1)
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PrayerArea"]
+shape = SubResource("BoxShape3D_2m5mr")
