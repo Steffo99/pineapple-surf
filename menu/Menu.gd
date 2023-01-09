@@ -5,6 +5,8 @@ signal play_pressed()
 var scores_downloaded := false
 var scores := [] as Array[Array]
 
+var score_scene := preload("res://menu/score.tscn")
+
 var is_uploading := false
 var should_open_scores_after_upload := false
 
@@ -45,9 +47,21 @@ func _fetch_scores(open_after: bool = false):
 	httpreq.connect("request_completed", func(result, response_code, headers, body):
 		var json = JSON.parse_string(body.get_string_from_utf8())
 		self.scores = (json as Array).map(func(element): return [element.name, element.score])
+		
+		for child in %ScoresVBox.get_children():
+			child.queue_free()
+		
+		for score in self.scores:
+			var score_sc = score_scene.instantiate()
+			score_sc.get_node("HBoxContainer/Name").text = score[0]
+			score_sc.get_node("HBoxContainer/Score").text = "%d" % score[1]
+			%ScoresVBox.add_child(score_sc)
+		
 		self.scores_downloaded = true
 		%ScoresButton.disabled = false
 		print(self.scores)
+		if open_after:
+			open_scores()
 		httpreq.queue_free()
 	)
 	httpreq.request(url)
