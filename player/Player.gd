@@ -134,7 +134,7 @@ func _input(event):
 		respawn()
 
 	if event is InputEventKey and event.keycode == KEY_ESCAPE:
-		get_tree().quit()
+		$"/root/BaseScene".move_to_menu()
 	
 	if event is InputEventMouseMotion:
 		var vec = event.relative
