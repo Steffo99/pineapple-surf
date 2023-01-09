@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6opu8v6xd660"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://island/CanSink.gd" id="1_bap2m"]
+[ext_resource type="Script" path="res://island/sinking/CanSink.gd" id="1_bap2m"]
 [ext_resource type="AudioStream" uid="uid://xretxahxbqdr" path="res://assets/splash.ogg" id="2_xqjos"]
 
 [node name="CanSink" type="Node"]

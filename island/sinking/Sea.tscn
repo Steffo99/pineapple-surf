@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh5blytk6vmdu"]
+[gd_scene load_steps=4 format=3]
 
-[ext_resource type="PackedScene" uid="uid://c7lblmilr3gob" path="res://island/SeaMesh.tscn" id="1_ej5r1"]
-[ext_resource type="Script" path="res://island/SinkArea.gd" id="3_0nuyu"]
+[ext_resource type="PackedScene" uid="uid://c7lblmilr3gob" path="res://island/sinking/SeaMesh.tscn" id="1_6je2t"]
+[ext_resource type="Script" path="res://island/sinking/SinkArea.gd" id="2_ethjj"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_hpkdw"]
 
 [node name="Sea" type="Node3D"]
 
-[node name="SeaMesh" parent="." instance=ExtResource("1_ej5r1")]
+[node name="SeaMesh" parent="." instance=ExtResource("1_6je2t")]
 
 [node name="SinkArea" type="Area3D" parent="."]
-script = ExtResource("3_0nuyu")
+script = ExtResource("2_ethjj")
 
 [node name="Shape" type="CollisionShape3D" parent="SinkArea"]
 shape = SubResource("WorldBoundaryShape3D_hpkdw")

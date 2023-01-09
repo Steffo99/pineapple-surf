@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://bg88gc1w1gw5m"]
 
-[ext_resource type="PackedScene" uid="uid://dh5blytk6vmdu" path="res://island/Sea.tscn" id="1_e0hpm"]
-[ext_resource type="PackedScene" uid="uid://b5i1sqd88wlle" path="res://player/Player.tscn" id="3_5378m"]
+[ext_resource type="PackedScene" uid="uid://dh5blytk6vmdu" path="res://island/sinking/Sea.tscn" id="1_e0hpm"]
+[ext_resource type="PackedScene" path="res://player/Player.tscn" id="3_5378m"]
 [ext_resource type="PackedScene" uid="uid://cyuqnp5bfan4y" path="res://island/IslandMesh.tscn" id="3_g5ug0"]
 [ext_resource type="PackedScene" uid="uid://tahdk48hqxis" path="res://island/HillMesh.tscn" id="4_5ll24"]
 [ext_resource type="PackedScene" uid="uid://cxa5irr1atgke" path="res://island/PyramidSmallMesh.tscn" id="5_uf8hd"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cwf11kdk7t64k" path="res://island/HoppityMesh.tscn" id="8_5pio0"]
 [ext_resource type="PackedScene" uid="uid://dp3n3j0r2ufhw" path="res://island/Temple.tscn" id="8_11ig5"]
 [ext_resource type="PackedScene" uid="uid://dutcugv574855" path="res://island/Leafpile.tscn" id="9_472aa"]
-[ext_resource type="PackedScene" uid="uid://v7bv81krh12e" path="res://island/Pineapple.tscn" id="10_dlxm4"]
+[ext_resource type="PackedScene" path="res://island/Pineapple.tscn" id="10_dlxm4"]
 [ext_resource type="PackedScene" uid="uid://wdj878sbi44n" path="res://island/BhopelagoMesh.tscn" id="10_wmo6y"]
 
 [sub_resource type="Gradient" id="Gradient_shcpx"]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7lblmilr3gob"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="Shader" path="res://island/Sea.gdshader" id="1_tu2de"]
+[ext_resource type="Shader" path="res://island/sinking/Sea.gdshader" id="1_tu2de"]
 [ext_resource type="Texture2D" uid="uid://bdoifsf6k0qb8" path="res://assets/water_tile.png" id="2_c8qvh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3uyyi"]

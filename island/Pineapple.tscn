@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpqebnfkv5ee"]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="PackedScene" uid="uid://bwwpi0itor6cw" path="res://island/PineappleMesh.tscn" id="1_ndmmp"]
 [ext_resource type="Script" path="res://island/Pineapple.gd" id="1_sbec5"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://island/Pop.gd" id="4_rn5e2"]
 [ext_resource type="PackedScene" uid="uid://cvou86mnmtloe" path="res://island/MoveTowardsPlayer.tscn" id="4_xnsun"]
 [ext_resource type="PackedScene" uid="uid://ci0hy0d4d1476" path="res://island/CollectibleByPlayer.tscn" id="5_yps0c"]
-[ext_resource type="PackedScene" uid="uid://c6opu8v6xd660" path="res://island/CanSink.tscn" id="7_la8g5"]
+[ext_resource type="PackedScene" path="res://island/sinking/CanSink.tscn" id="7_la8g5"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_8v3m4"]
 height = 0.9
