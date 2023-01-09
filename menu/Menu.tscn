@@ -18,6 +18,7 @@ theme = ExtResource("1_mkxnc")
 script = ExtResource("2_6amk3")
 
 [node name="Panel" type="TextureRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -27,6 +28,7 @@ texture = ExtResource("2_q14jx")
 stretch_mode = 1
 
 [node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -35,32 +37,25 @@ grow_vertical = 2
 alignment = 1
 
 [node name="Authors" type="Label" parent="Content"]
-offset_right = 284.0
-offset_bottom = 18.0
+layout_mode = 2
 text = "A game by Ichicoro and Steffo"
 horizontal_alignment = 1
 
 [node name="Title" type="Label" parent="Content"]
-offset_top = 22.0
-offset_right = 284.0
-offset_bottom = 72.0
+layout_mode = 2
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 48
-text = "Harvest"
+text = "Pineapple Surf"
 horizontal_alignment = 1
 
 [node name="Inputs" type="Control" parent="Content"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 142.0
-offset_top = 90.0
-offset_right = 142.0
-offset_bottom = 90.0
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 
 [node name="NameInput" type="TextEdit" parent="Content/Inputs"]
 custom_minimum_size = Vector2(140, 28)
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -70,14 +65,11 @@ size_flags_vertical = 6
 placeholder_text = "What's your name?"
 
 [node name="Buttons" type="Control" parent="Content"]
-layout_mode = 3
-anchors_preset = 0
-offset_top = 123.0
-offset_right = 284.0
-offset_bottom = 123.0
+layout_mode = 2
 size_flags_vertical = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Content/Buttons"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -88,9 +80,7 @@ alignment = 1
 [node name="PlayButton" type="Button" parent="Content/Buttons/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(36, 2.08165e-12)
-offset_left = 96.0
-offset_right = 132.0
-offset_bottom = 18.0
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 0
@@ -100,9 +90,7 @@ text = "Play"
 [node name="ScoresButton" type="Button" parent="Content/Buttons/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(52, 2.08165e-12)
-offset_left = 136.0
-offset_right = 188.0
-offset_bottom = 18.0
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 0
@@ -110,14 +98,13 @@ disabled = true
 text = "Scores"
 
 [node name="Authors2" type="Label" parent="Content"]
-offset_top = 142.0
-offset_right = 284.0
-offset_bottom = 160.0
+layout_mode = 2
 size_flags_vertical = 1
 text = "Ludum Dare 52 - Harvest"
 horizontal_alignment = 1
 
 [node name="ScoreboardContainer" parent="." instance=ExtResource("4_6ss1l")]
+layout_mode = 1
 
 [connection signal="text_changed" from="Content/Inputs/NameInput" to="." method="_on_name_input_text_changed"]
 [connection signal="pressed" from="Content/Buttons/HBoxContainer/PlayButton" to="." method="play"]
