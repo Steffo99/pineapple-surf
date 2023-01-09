@@ -6,3 +6,7 @@ extends RigidBody3D
 
 func _on_collectible_by_player_collected():
 	player.collected_fruit += 1
+
+
+func _on_splash_sound_finished():
+	queue_free()

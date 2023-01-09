@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://v7bv81krh12e"]
+[gd_scene load_steps=9 format=3 uid="uid://cpqebnfkv5ee"]
 
 [ext_resource type="PackedScene" uid="uid://bwwpi0itor6cw" path="res://island/PineappleMesh.tscn" id="1_ndmmp"]
 [ext_resource type="Script" path="res://island/Pineapple.gd" id="1_sbec5"]
@@ -6,9 +6,9 @@
 [ext_resource type="Script" path="res://island/Pop.gd" id="4_rn5e2"]
 [ext_resource type="PackedScene" uid="uid://cvou86mnmtloe" path="res://island/MoveTowardsPlayer.tscn" id="4_xnsun"]
 [ext_resource type="PackedScene" uid="uid://ci0hy0d4d1476" path="res://island/CollectibleByPlayer.tscn" id="5_yps0c"]
-[ext_resource type="PackedScene" uid="uid://bj4d3a0jxgvpu" path="res://island/CanSplash.tscn" id="7_3mgie"]
+[ext_resource type="PackedScene" uid="uid://c6opu8v6xd660" path="res://island/CanSink.tscn" id="7_la8g5"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_q83gf"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8v3m4"]
 height = 0.9
 radius = 0.3
 
@@ -21,7 +21,7 @@ script = ExtResource("1_sbec5")
 
 [node name="Shape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
-shape = SubResource("CylinderShape3D_q83gf")
+shape = SubResource("CylinderShape3D_8v3m4")
 
 [node name="PineappleMesh" parent="." instance=ExtResource("1_ndmmp")]
 
@@ -36,9 +36,11 @@ target_path = NodePath("..")
 [node name="CollectibleByPlayer" parent="." instance=ExtResource("5_yps0c")]
 target_path = NodePath("..")
 
-[node name="CanSplash" parent="." instance=ExtResource("7_3mgie")]
+[node name="CanSink" parent="." instance=ExtResource("7_la8g5")]
 
 [connection signal="collected" from="CollectibleByPlayer" to="." method="_on_collectible_by_player_collected"]
+[connection signal="finished" from="CanSink/SplashSound" to="." method="_on_splash_sound_finished"]
 
 [editable path="MoveTowardsPlayer"]
 [editable path="CollectibleByPlayer"]
+[editable path="CanSink"]

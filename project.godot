@@ -19,10 +19,10 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://player/onhand/BaseWeapon.gd"
 }, {
-"base": "Node3D",
-"class": &"CanSplash",
+"base": "Node",
+"class": &"CanSink",
 "language": &"GDScript",
-"path": "res://island/CanSplash.gd"
+"path": "res://island/CanSink.gd"
 }, {
 "base": "Node3D",
 "class": &"CropTile",
@@ -43,15 +43,21 @@ _global_script_classes=[{
 "class": &"PlayerInputData",
 "language": &"GDScript",
 "path": "res://player/PlayerInputData.gd"
+}, {
+"base": "Area3D",
+"class": &"SinkArea",
+"language": &"GDScript",
+"path": "res://island/SinkArea.gd"
 }]
 _global_script_class_icons={
 "BaseScene": "",
 "BaseWeapon": "",
-"CanSplash": "",
+"CanSink": "",
 "CropTile": "",
 "PeaShooter": "",
 "Player": "",
-"PlayerInputData": ""
+"PlayerInputData": "",
+"SinkArea": ""
 }
 
 [application]
