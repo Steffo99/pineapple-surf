@@ -49,7 +49,9 @@ func try_to_explode():
 func win():
 	print("YOU WIN!")
 	print("Time: ", time)
+	Singletons.should_upload = true
 	Singletons.time = time
+	$"/root/BaseScene".move_to_menu()
 	
 	# get_tree().change_scene_to_file("res://base/BaseScene.tscn")
 	queue_free()
