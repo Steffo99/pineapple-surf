@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dp3n3j0r2ufhw"]
+[gd_scene load_steps=11 format=3 uid="uid://dp3n3j0r2ufhw"]
 
 [ext_resource type="PackedScene" uid="uid://c7dmda5c5ju28" path="res://island/TempleMesh.tscn" id="1_e3qkq"]
 [ext_resource type="Script" path="res://island/Temple.gd" id="1_ij5av"]
 [ext_resource type="Texture2D" uid="uid://ceucx3sfu3345" path="res://assets/island_model/texture_3.png" id="2_mx23r"]
 [ext_resource type="AudioStream" uid="uid://dje4pc3vdya0d" path="res://assets/sine.wav" id="4_wahrh"]
+[ext_resource type="Shader" uid="uid://cp6qipvjl5h1v" path="res://island/PrayerBeam.tres" id="5_kuhb6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2cin"]
 resource_name = "material3"
+render_priority = -1
 transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("2_mx23r")
@@ -30,6 +32,14 @@ _surfaces = [{
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2m5mr"]
 size = Vector3(2, 2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yfbad"]
+render_priority = 0
+shader = ExtResource("5_kuhb6")
+
+[sub_resource type="BoxMesh" id="BoxMesh_1a73e"]
+material = SubResource("ShaderMaterial_yfbad")
+size = Vector3(1, 16, 1)
 
 [node name="Temple" type="Node3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -55,3 +65,8 @@ monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PrayerArea"]
 shape = SubResource("BoxShape3D_2m5mr")
+
+[node name="PrayerBeam" type="MeshInstance3D" parent="PrayerArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+mesh = SubResource("BoxMesh_1a73e")
+skeleton = NodePath("../..")

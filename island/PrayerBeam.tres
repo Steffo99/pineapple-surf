@@ -1,0 +1,137 @@
+[gd_resource type="VisualShader" load_steps=12 format=3 uid="uid://cp6qipvjl5h1v"]
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_e1y00"]
+
+[sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_7s81m"]
+output_port_for_preview = 0
+function = 17
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_x2brx"]
+output_port_for_preview = 0
+default_input_values = [0, 0.0, 1, 3.142]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_djub3"]
+output_port_for_preview = 0
+function = 0
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_770lq"]
+output_port_for_preview = 0
+default_input_values = [0, 0.0, 1, 32.0]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_dijno"]
+output_port_for_preview = 0
+function = 17
+
+[sub_resource type="VisualShaderNodeSmoothStep" id="VisualShaderNodeSmoothStep_gtl0n"]
+output_port_for_preview = 0
+default_input_values = [0, 0.8, 1, 1.0, 2, 0.5]
+
+[sub_resource type="VisualShaderNodeMultiplyAdd" id="VisualShaderNodeMultiplyAdd_fn2e2"]
+default_input_values = [0, 0.0, 1, 0.4, 2, 0.1]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_b66y3"]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_7wd38"]
+output_port_for_preview = 0
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_2c2ak"]
+output_port_for_preview = 1
+default_input_values = [0, Vector2(0, 0)]
+op_type = 0
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_add, unshaded;
+
+
+
+
+void fragment() {
+// Input:2
+	float n_out2p0 = TIME;
+
+
+// Input:3
+	vec2 n_out3p0 = UV;
+
+
+// VectorDecompose:4
+	float n_out4p0 = n_out3p0.x;
+	float n_out4p1 = n_out3p0.y;
+
+
+// FloatOp:14
+	float n_in14p1 = 32.00000;
+	float n_out14p0 = n_out4p1 * n_in14p1;
+
+
+// FloatFunc:15
+	float n_out15p0 = fract(n_out14p0);
+
+
+// FloatOp:10
+	float n_out10p0 = n_out2p0 + n_out15p0;
+
+
+// FloatFunc:11
+	float n_out11p0 = fract(n_out10p0);
+
+
+// FloatOp:12
+	float n_in12p1 = 3.14200;
+	float n_out12p0 = n_out11p0 * n_in12p1;
+
+
+// FloatFunc:13
+	float n_out13p0 = sin(n_out12p0);
+
+
+// SmoothStep:16
+	float n_in16p0 = 0.80000;
+	float n_in16p1 = 1.00000;
+	float n_out16p0 = smoothstep(n_in16p0, n_in16p1, n_out13p0);
+
+
+// MultiplyAdd:17
+	float n_in17p1 = 0.40000;
+	float n_in17p2 = 0.10000;
+	float n_out17p0 = fma(n_out16p0, n_in17p1, n_in17p2);
+
+
+// Output:0
+	ALPHA = n_out17p0;
+
+
+}
+"
+graph_offset = Vector2(15.9885, 99.4508)
+modes/blend = 1
+flags/unshaded = true
+nodes/fragment/0/position = Vector2(1157.94, 238.552)
+nodes/fragment/2/node = SubResource("VisualShaderNodeInput_b66y3")
+nodes/fragment/2/position = Vector2(-489.808, 303.152)
+nodes/fragment/3/node = SubResource("VisualShaderNodeInput_7wd38")
+nodes/fragment/3/position = Vector2(-1082.22, 380.69)
+nodes/fragment/4/node = SubResource("VisualShaderNodeVectorDecompose_2c2ak")
+nodes/fragment/4/position = Vector2(-779.218, 382.69)
+nodes/fragment/10/node = SubResource("VisualShaderNodeFloatOp_e1y00")
+nodes/fragment/10/position = Vector2(-140.048, 330.079)
+nodes/fragment/11/node = SubResource("VisualShaderNodeFloatFunc_7s81m")
+nodes/fragment/11/position = Vector2(51.0559, 309.319)
+nodes/fragment/12/node = SubResource("VisualShaderNodeFloatOp_x2brx")
+nodes/fragment/12/position = Vector2(252.606, 296.547)
+nodes/fragment/13/node = SubResource("VisualShaderNodeFloatFunc_djub3")
+nodes/fragment/13/position = Vector2(465.606, 295.547)
+nodes/fragment/14/node = SubResource("VisualShaderNodeFloatOp_770lq")
+nodes/fragment/14/position = Vector2(-567.153, 394.715)
+nodes/fragment/15/node = SubResource("VisualShaderNodeFloatFunc_dijno")
+nodes/fragment/15/position = Vector2(-365.353, 405.715)
+nodes/fragment/16/node = SubResource("VisualShaderNodeSmoothStep_gtl0n")
+nodes/fragment/16/position = Vector2(690.342, 223.169)
+nodes/fragment/17/node = SubResource("VisualShaderNodeMultiplyAdd_fn2e2")
+nodes/fragment/17/position = Vector2(923.023, 307.369)
+nodes/fragment/connections = PackedInt32Array(3, 0, 4, 0, 2, 0, 10, 0, 10, 0, 11, 0, 11, 0, 12, 0, 12, 0, 13, 0, 4, 1, 14, 0, 14, 0, 15, 0, 15, 0, 10, 1, 13, 0, 16, 2, 16, 0, 17, 0, 17, 0, 0, 1)
