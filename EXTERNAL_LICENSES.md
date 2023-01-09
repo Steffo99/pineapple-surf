@@ -20,7 +20,11 @@ Creative Commons: [This work is dedicated to the public domain with CC0 1.0 Univ
 
 > Yes, but a credit would be nice
 
-</details>
+### [Explosion Boom Sticker](https://tenor.com/view/explosion-boom-gif-13902355)
+
+Unlicensed, multiple copies found on Tenor, should be fine to use in a non-commercial project.
+
+Will remove if asked, obviously.
 
 ## Sounds
 
@@ -39,3 +43,7 @@ Creative Commons: [This work is licensed under the Attribution 4.0 License.](htt
 ### [level up.wav](https://freesound.org/people/MakoFox/sounds/126422/) by MakoFox
 
 Creative Commons: [This work is licensed under the Attribution 3.0 License.](https://creativecommons.org/licenses/by/3.0/)
+
+### [Tremolo explosion](https://freesound.org/people/ProjectsU012/sounds/334265/) by ProjectsU012
+
+Creative Commons: [This work is licensed under the Attribution 4.0 License.](https://creativecommons.org/licenses/by/4.0/)
