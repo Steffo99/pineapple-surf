@@ -20,7 +20,7 @@ func _ready() -> void:
 func _upload_score():
 	Singletons.should_upload = false
 	
-	var url = "https://arcade.steffo.eu/score/?board=test&player=%s" % Singletons.username
+	var url = "https://arcade.steffo.eu/score/?board=ld52&player=%s" % Singletons.username
 	
 	var httpreq = HTTPRequest.new()
 	add_child(httpreq)
@@ -36,14 +36,14 @@ func _upload_score():
 	httpreq.request(url, [
 		"Content-Type: application/json",
 		"Accept: application/json",
-		"Authorization: Bearer hahaha-ronaldinho-soccer"
+		"Authorization: Bearer pineapples-everywhere"
 	], true, HTTPClient.METHOD_PUT, str(Singletons.time))
 
 	_fetch_scores(true)
 
 
 func _fetch_scores(open_after: bool = false):
-	const url = "https://arcade.steffo.eu/board/?board=test&offset=0&size=10"
+	const url = "https://arcade.steffo.eu/board/?board=ld52&offset=0&size=50"
 	var httpreq = HTTPRequest.new()
 	add_child(httpreq)
 	httpreq.connect("request_completed", func(result, response_code, headers, body):

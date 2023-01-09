@@ -21,7 +21,6 @@ grow_vertical = 2
 script = ExtResource("1_rc765")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,7 +29,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.635294)
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -45,7 +43,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uie3v")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -53,30 +50,26 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Authors" type="Label" parent="Panel/VBoxContainer"]
-layout_mode = 2
 text = "Scores"
 label_settings = SubResource("LabelSettings_xmwgs")
 horizontal_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer"]
-layout_mode = 2
 size_flags_vertical = 3
 
 [node name="ScoresVBox" type="VBoxContainer" parent="Panel/VBoxContainer/ScrollContainer"]
-layout_mode = 2
+offset_right = 120.0
+offset_bottom = 26.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
 [node name="score" parent="Panel/VBoxContainer/ScrollContainer/ScoresVBox" instance=ExtResource("1_a00v5")]
-layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
-layout_mode = 2
 theme_override_constants/margin_bottom = 2
 
 [node name="closebtn" type="Button" parent="Panel/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(52, 2.08165e-12)
-layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 0
