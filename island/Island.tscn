@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bg88gc1w1gw5m"]
+[gd_scene load_steps=17 format=3 uid="uid://bg88gc1w1gw5m"]
 
 [ext_resource type="PackedScene" uid="uid://dh5blytk6vmdu" path="res://island/Sea.tscn" id="1_e0hpm"]
 [ext_resource type="PackedScene" uid="uid://b5i1sqd88wlle" path="res://player/Player.tscn" id="3_5378m"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cxa5irr1atgke" path="res://island/PyramidSmallMesh.tscn" id="5_uf8hd"]
 [ext_resource type="PackedScene" uid="uid://bknwefv5ycc3u" path="res://island/PyramidSmolMesh.tscn" id="6_klmt8"]
 [ext_resource type="PackedScene" uid="uid://boxtb3trgcy8c" path="res://island/PillarMesh.tscn" id="7_grmwj"]
+[ext_resource type="PackedScene" uid="uid://c7dmda5c5ju28" path="res://island/TempleMesh.tscn" id="8_2yrdq"]
 [ext_resource type="PackedScene" uid="uid://cwf11kdk7t64k" path="res://island/HoppityMesh.tscn" id="8_5pio0"]
 [ext_resource type="PackedScene" uid="uid://dutcugv574855" path="res://island/Leafpile.tscn" id="9_472aa"]
 [ext_resource type="PackedScene" uid="uid://v7bv81krh12e" path="res://island/Pineapple.tscn" id="10_dlxm4"]
@@ -97,7 +98,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 38)
 
 [node name="HoppityMesh" parent="World" instance=ExtResource("8_5pio0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -27, 0, 53)
-metadata/_edit_lock_ = true
+
+[node name="TempleMesh" parent="World" instance=ExtResource("8_2yrdq")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_302o8")
