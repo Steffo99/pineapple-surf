@@ -22,8 +22,15 @@ const AIR_ACCELERATE = 100		# Hu/39.97
 @onready var active_weapon: BaseWeapon:
 	get: return OnHand.active_weapon
 
-# DEBUG NODES
 @onready var ammo_label = $HUD/AmmoLabel
+@onready var fruit_label = $HUD/PineappleLabel
+
+var collected_fruit: int = 0:
+	get:
+		return collected_fruit
+	set(value):
+		collected_fruit = value
+		fruit_label.text = "%d harvested" % collected_fruit
 
 var last_frame_input_data: PlayerInputData = PlayerInputData.new()
 var input_data: PlayerInputData = PlayerInputData.new()
