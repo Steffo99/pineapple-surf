@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bg88gc1w1gw5m"]
+[gd_scene load_steps=18 format=3 uid="uid://bg88gc1w1gw5m"]
 
 [ext_resource type="PackedScene" uid="uid://dh5blytk6vmdu" path="res://island/Sea.tscn" id="1_e0hpm"]
 [ext_resource type="PackedScene" uid="uid://b5i1sqd88wlle" path="res://player/Player.tscn" id="3_5378m"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dp3n3j0r2ufhw" path="res://island/Temple.tscn" id="8_11ig5"]
 [ext_resource type="PackedScene" uid="uid://dutcugv574855" path="res://island/Leafpile.tscn" id="9_472aa"]
 [ext_resource type="PackedScene" uid="uid://v7bv81krh12e" path="res://island/Pineapple.tscn" id="10_dlxm4"]
+[ext_resource type="PackedScene" uid="uid://wdj878sbi44n" path="res://island/BhopelagoMesh.tscn" id="10_wmo6y"]
 
 [sub_resource type="Gradient" id="Gradient_shcpx"]
 interpolation_mode = 2
@@ -39,10 +40,21 @@ sky = SubResource("Sky_j6hso")
 [node name="Player" parent="." instance=ExtResource("3_5378m")]
 transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 2.08165e-12, 3.896, 2.08165e-12)
 
-[node name="World" type="Node3D" parent="."]
+[node name="Sea" parent="." instance=ExtResource("1_e0hpm")]
 metadata/_edit_lock_ = true
 
-[node name="Sea" parent="World" instance=ExtResource("1_e0hpm")]
+[node name="Temple" parent="." instance=ExtResource("8_11ig5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, -4)
+metadata/_edit_lock_ = true
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="Environment" type="WorldEnvironment" parent="World"]
+environment = SubResource("Environment_302o8")
+
+[node name="Light" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, -0.249636, 0.96834, 0, -0.96834, -0.249636, 0, 7.44648, 0)
+light_color = Color(1, 0.698039, 0.470588, 1)
 metadata/_edit_lock_ = true
 
 [node name="IslandMesh" parent="World" instance=ExtResource("3_g5ug0")]
@@ -74,43 +86,47 @@ metadata/_edit_lock_ = true
 
 [node name="PillarMesh" parent="World" instance=ExtResource("7_grmwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 25)
+metadata/_edit_lock_ = true
 
 [node name="PillarMesh5" parent="World" instance=ExtResource("7_grmwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 43)
+metadata/_edit_lock_ = true
 
 [node name="PillarMesh6" parent="World" instance=ExtResource("7_grmwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, 44)
+metadata/_edit_lock_ = true
 
 [node name="PillarMesh7" parent="World" instance=ExtResource("7_grmwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, 32)
+metadata/_edit_lock_ = true
 
 [node name="PillarMesh8" parent="World" instance=ExtResource("7_grmwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 33)
+metadata/_edit_lock_ = true
 
 [node name="PillarMesh9" parent="World" instance=ExtResource("7_grmwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 24)
+metadata/_edit_lock_ = true
 
 [node name="PillarMesh2" parent="World" instance=ExtResource("7_grmwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 28)
+metadata/_edit_lock_ = true
 
 [node name="PillarMesh4" parent="World" instance=ExtResource("7_grmwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 37)
+metadata/_edit_lock_ = true
 
 [node name="PillarMesh3" parent="World" instance=ExtResource("7_grmwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 38)
+metadata/_edit_lock_ = true
 
 [node name="HoppityMesh" parent="World" instance=ExtResource("8_5pio0")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -27, 0, 53)
+metadata/_edit_lock_ = true
 
-[node name="Temple" parent="World" instance=ExtResource("8_11ig5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, -4)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_302o8")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.249636, 0.96834, 0, -0.96834, -0.249636, 0, 7.44648, 0)
-light_color = Color(1, 0.698039, 0.470588, 1)
+[node name="BhopelagoMesh" parent="World" instance=ExtResource("10_wmo6y")]
+skeleton = NodePath("../../..")
+metadata/_edit_lock_ = true
 
 [node name="CropTiles" type="Node3D" parent="."]
 
@@ -134,6 +150,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 11)
 
 [node name="Leafpile23" parent="CropTiles" instance=ExtResource("9_472aa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 1, 24)
+
+[node name="Leafpile26" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 1, 27)
+
+[node name="Leafpile30" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 1, 22)
+
+[node name="Leafpile32" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 1, 18)
+
+[node name="Leafpile38" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 1, 16)
+
+[node name="Leafpile33" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 1, 14)
+
+[node name="Leafpile34" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 1, 8)
+
+[node name="Leafpile35" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 1, 7)
+
+[node name="Leafpile36" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 1, 2)
+
+[node name="Leafpile37" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 1, 5)
+
+[node name="Leafpile39" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 1, 5)
+
+[node name="Leafpile29" parent="CropTiles" instance=ExtResource("9_472aa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 1, 35)
 
 [node name="Leafpile27" parent="CropTiles" instance=ExtResource("9_472aa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 32)
@@ -187,6 +236,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 59)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, 60)
 
 [node name="Produce" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Pineapple" parent="Produce" instance=ExtResource("10_dlxm4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 5)
