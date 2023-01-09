@@ -39,7 +39,7 @@ func complete():
 func _process(_delta):
 	var scale_factor = 0
 	if not growth_timer.is_stopped():
-		scale_factor = 1 - (growth_timer.time_left / growth_timer.wait_time)
+		scale_factor = 0.10 + 0.90 * (1 - growth_timer.time_left / growth_timer.wait_time)
 	sprout_mesh.scale = Vector3(scale_factor, scale_factor, scale_factor)
 
 
