@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://sh6al31s6ghr" path="res://assets/explosion-9.png" id="17_p1w8b"]
 [ext_resource type="AudioStream" uid="uid://tho5brgaucvs" path="res://assets/explosion.wav" id="18_8xllm"]
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_ikahs"]
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_dw7h5"]
 frames = 18
 speed_scale = 5.0
 frame_0/texture = ExtResource("15_y8upx")
@@ -58,22 +58,22 @@ frame_16/duration = 1.0
 frame_17/texture = ExtResource("15_y8upx")
 frame_17/duration = 1.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6dwm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x5uay"]
 render_priority = 1
 transparency = 1
 blend_mode = 1
 shading_mode = 0
-albedo_texture = SubResource("AnimatedTexture_ikahs")
+albedo_texture = SubResource("AnimatedTexture_dw7h5")
 texture_filter = 0
 billboard_mode = 1
 billboard_keep_scale = true
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_wyptu"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_2bqq6"]
 orientation = 2
 
 [node name="FunnyExplosion" type="MeshInstance3D"]
-material_override = SubResource("StandardMaterial3D_t6dwm")
-mesh = SubResource("PlaneMesh_wyptu")
+material_override = SubResource("StandardMaterial3D_x5uay")
+mesh = SubResource("PlaneMesh_2bqq6")
 
 [node name="ExplosionSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("18_8xllm")

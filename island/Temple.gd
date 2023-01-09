@@ -39,8 +39,8 @@ func try_to_explode():
 		exploded = true
 		var explosion = explosion_scene.instantiate()
 		var explosion_sound = explosion.get_node("ExplosionSound")
-		explosion.position = Vector3(1, 6, -1)
-		explosion.scale = Vector3(2, 2, 2)
+		explosion.position = pineglasses.position + Vector3.UP
+		explosion.scale = pineglasses.scale
 		explosion_sound.connect("finished", win)
 		add_child(explosion)
 
