@@ -62,7 +62,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Pineapple SurfA bunnyhopping, retro-looking, first person seed shooter"
+config/name="Pineapple Surf"
 config/description="A bunnyhopping, retro-looking, first person seed shooters"
 run/main_scene="res://base/BaseScene.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
