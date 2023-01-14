@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://bg88gc1w1gw5m"]
 
-[ext_resource type="PackedScene" path="res://island/sinking/Sea.tscn" id="1_e0hpm"]
+[ext_resource type="PackedScene" uid="uid://dh5blytk6vmdu" path="res://island/sinking/Sea.tscn" id="1_e0hpm"]
 [ext_resource type="PackedScene" uid="uid://bbp47va0yygpw" path="res://player/Player.tscn" id="3_5378m"]
 [ext_resource type="PackedScene" uid="uid://cyuqnp5bfan4y" path="res://island/IslandMesh.tscn" id="3_g5ug0"]
 [ext_resource type="PackedScene" uid="uid://tahdk48hqxis" path="res://island/HillMesh.tscn" id="4_5ll24"]

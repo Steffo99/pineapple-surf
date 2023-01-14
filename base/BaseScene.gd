@@ -23,6 +23,7 @@ var current_scene: Node = null:
 			current_scene.queue_free()
 		current_scene = new_scene
 		add_child(current_scene)
+		move_child(current_scene, 0)
 
 
 ## Change the current scene to the Island.

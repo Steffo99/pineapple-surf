@@ -19,4 +19,6 @@ func _on_fetched_scores():
 
 
 func _ready():
+	print("Connecting fetched_scores to the Scores button")
 	$"/root/BaseScene/ScoreboardContainer".connect("fetched_scores", _on_fetched_scores)
+	$"/root/BaseScene/ScoreboardContainer".fetch_scores(false)

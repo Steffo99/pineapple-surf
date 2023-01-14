@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://b7h36f4ai0qmq"]
+[gd_scene load_steps=2 format=3 uid="uid://b7h36f4ai0qmq"]
 
-[node name="MarginContainer" type="MarginContainer"]
+[ext_resource type="Script" path="res://menu/ScoreBox.gd" id="1_exul7"]
+
+[node name="ScoreBox" type="MarginContainer"]
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 5
+script = ExtResource("1_exul7")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2

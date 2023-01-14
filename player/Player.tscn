@@ -79,7 +79,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CameraViewportContainer" type="SubViewportContainer" parent="Head/Viewport"]
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -118,7 +118,7 @@ theme = SubResource("Theme_smyke")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="HUD"]
 show_behind_parent = true
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -147,7 +147,7 @@ scale = Vector2(1.65, 1)
 metadata/_edit_lock_ = true
 
 [node name="PineappleLabel" type="Label" parent="HUD"]
-anchors_preset = 2
+layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
@@ -161,7 +161,7 @@ text = "0 harvested"
 vertical_alignment = 2
 
 [node name="AmmoLabel" type="Label" parent="HUD"]
-anchors_preset = 3
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -180,7 +180,7 @@ vertical_alignment = 2
 
 [node name="Crosshair" type="ColorRect" parent="HUD"]
 material = SubResource("ShaderMaterial_2p6rt")
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
