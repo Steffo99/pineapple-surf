@@ -52,7 +52,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 
-[node name="NameInput" type="TextEdit" parent="Content/Inputs"]
+[node name="NameInput" type="LineEdit" parent="Content/Inputs"]
 custom_minimum_size = Vector2(140, 28)
 layout_mode = 1
 anchors_preset = 15
