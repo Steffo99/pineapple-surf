@@ -66,7 +66,6 @@ func fetch_scores(open_after: bool = false):
 func show_scores():
 	print("Displaying scores...")
 	prev_mouse_mode = Input.mouse_mode as Input.MouseMode
-	print("Previous mouse mode was: ", prev_mouse_mode)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	visible = true
 

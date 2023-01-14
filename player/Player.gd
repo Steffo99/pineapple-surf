@@ -22,8 +22,12 @@ const AIR_ACCELERATE = 100		# Hu/39.97
 @onready var active_weapon: BaseWeapon:
 	get: return OnHand.active_weapon
 
-@onready var ammo_label = $HUD/AmmoLabel
-@onready var fruit_label = $HUD/PineappleLabel
+@onready var ammo_label: Label = $HUD/AmmoLabel
+@onready var fruit_label: Label = $HUD/PineappleLabel
+@onready var speed_label: Label = $HUD/SpeedLabel
+@onready var timer_label: Label = $HUD/TimerLabel
+
+@onready var temple: Temple = $"/root/BaseScene/Island/Temple"
 
 var collected_fruit: int = 0:
 	get:
@@ -96,7 +100,7 @@ func _physics_process(delta):
 	if active_weapon and active_weapon.ammoType != BaseWeapon.AmmoType.NONE:
 		ammo_label.show()
 		if active_weapon is PeaShooter:
-			ammo_label.text = "%d seeds left" % active_weapon.remaining
+			ammo_label.text = "%d seeds" % active_weapon.remaining
 	else:
 		ammo_label.hide()
 	
@@ -126,7 +130,11 @@ func _air_accelerate(wish_dir: Vector3, wish_speed: float, airaccelerate: float,
 
 
 func _process(_delta: float) -> void:
-	self.camera.global_transform = self.head.global_transform
+	speed_label.text = "%0.2f km/h" % velocity.length()
+	if temple != null:
+		timer_label.text = "%0.3f s" % temple.time
+	else:
+		timer_label.text = ""
 
 
 func _input(event):

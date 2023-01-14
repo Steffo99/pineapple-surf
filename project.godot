@@ -53,6 +53,11 @@ _global_script_classes=[{
 "class": &"SinkArea",
 "language": &"GDScript",
 "path": "res://island/sinking/SinkArea.gd"
+}, {
+"base": "Node3D",
+"class": &"Temple",
+"language": &"GDScript",
+"path": "res://island/Temple.gd"
 }]
 _global_script_class_icons={
 "BaseScene": "",
@@ -63,16 +68,18 @@ _global_script_class_icons={
 "Player": "",
 "PlayerInputData": "",
 "ScoreBox": "",
-"SinkArea": ""
+"SinkArea": "",
+"Temple": ""
 }
 
 [application]
 
 config/name="Pineapple Surf"
-config/description="A bunnyhopping, retro-looking, first person seed shooters"
+config/description="A bunnyhopping, retro-looking, first person seed shooter"
 run/main_scene="res://base/BaseScene.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 boot_splash/bg_color=Color(0.231373, 0.490196, 0.309804, 1)
+boot_splash/image="res://assets/pineglasses.png"
 config/icon="res://assets/pineglasses.png"
 
 [autoload]

@@ -49,4 +49,4 @@ static func delete_children(node):
 static func log_line(obj: Node, msg: String):
 	var time = Time.get_time_dict_from_system()
 	var time_str = "%02d:%02d:%02d" % [time.hour, time.minute, time.second]
-	print("@%s [%s]: %s" % [time_str, obj.name, msg])
+

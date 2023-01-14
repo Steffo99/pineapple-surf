@@ -1,5 +1,5 @@
 extends Node3D
-
+class_name Temple
 
 var score: int = 0
 var time: float = 0.0
@@ -7,16 +7,16 @@ var is_exploded: bool = false
 
 @export var size_per_prayer: float = 0.05
 @export var pitch_per_prayer: float = 0.02
-@export var explode_at: int = 1
+@export var explode_at: int = 150
 @export var explosion_scene: PackedScene = preload("res://island/FunnyExplosion.tscn")
 
-@onready var player: Player = Singletons.player
 @onready var prayer_area: Area3D = $PrayerArea
 @onready var pineglasses: MeshInstance3D = $Pineglasses
 @onready var pineglasses_sound: AudioStreamPlayer3D = $Pineglasses/Growth
 
 
 func try_to_collect_fruit():
+	var player = Singletons.player
 	if prayer_area.overlaps_body(player):
 		if player.collected_fruit > 0:
 			if not pineglasses_sound.playing:

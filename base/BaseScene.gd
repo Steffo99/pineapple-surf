@@ -30,7 +30,7 @@ var current_scene: Node = null:
 func move_to_island():
 	print("Starting game...")
 	emit_signal("moving_to_island")
-	current_scene = load("res://island/Island.tscn").instantiate()
+	current_scene = preload("res://island/Island.tscn").instantiate()
 	emit_signal("moved_to_island")
 
 ## Change the current scene to the main menu.
@@ -38,7 +38,7 @@ func move_to_menu():
 	print("Going to the menu...")
 	emit_signal("moving_to_menu")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	current_scene = load("res://menu/Menu.tscn").instantiate()
+	current_scene = preload("res://menu/Menu.tscn").instantiate()
 	current_scene.connect("play_pressed", move_to_island)
 	emit_signal("moved_to_menu")
 

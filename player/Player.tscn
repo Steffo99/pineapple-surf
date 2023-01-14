@@ -147,17 +147,22 @@ scale = Vector2(1.65, 1)
 metadata/_edit_lock_ = true
 
 [node name="PineappleLabel" type="Label" parent="HUD"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -26.0
-offset_right = 106.0
-offset_bottom = -8.0
+offset_left = -102.0
+offset_top = -22.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("4_d7ru6")
 theme_override_font_sizes/font_size = 16
 text = "0 harvested"
+horizontal_alignment = 2
 vertical_alignment = 2
 
 [node name="AmmoLabel" type="Label" parent="HUD"]
@@ -166,16 +171,46 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -103.0
-offset_top = -26.0
-offset_right = -8.0
-offset_bottom = -8.0
+offset_left = -99.0
+offset_top = -34.0
+offset_right = -4.0
+offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("4_d7ru6")
 theme_override_font_sizes/font_size = 16
-text = "8888 seeds left"
+text = "8888 seeds"
 horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="TimerLabel" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -34.0
+offset_right = 99.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme = ExtResource("4_d7ru6")
+theme_override_font_sizes/font_size = 16
+text = "0.000 s"
+vertical_alignment = 2
+
+[node name="SpeedLabel" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -22.0
+offset_right = 99.0
+offset_bottom = -4.0
+grow_vertical = 0
+theme = ExtResource("4_d7ru6")
+theme_override_font_sizes/font_size = 16
+text = "5.00 km/h"
 vertical_alignment = 2
 
 [node name="Crosshair" type="ColorRect" parent="HUD"]
