@@ -98,7 +98,7 @@ text = "Scores"
 [node name="Authors2" type="Label" parent="Content"]
 layout_mode = 2
 size_flags_vertical = 1
-text = "Ludum Dare 52 - Harvest"
+text = "[Post-Jam] Ludum Dare 52 - Harvest"
 horizontal_alignment = 1
 
 [connection signal="text_changed" from="Content/Inputs/NameInput" to="." method="_on_name_input_text_changed"]
