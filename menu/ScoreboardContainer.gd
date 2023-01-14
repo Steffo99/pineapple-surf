@@ -37,7 +37,7 @@ func upload_score(score: float):
 
 
 func fetch_scores(open_after: bool = false):
-	const url = "https://arcade.steffo.eu/board/?board=ld52&offset=0&size=10"
+	const url = "https://arcade.steffo.eu/board/?board=ld52&offset=0&size=200"
 	var httpreq = HTTPRequest.new()
 	add_child(httpreq)
 	httpreq.connect("request_completed", func(_result, _response_code, _headers, body):
