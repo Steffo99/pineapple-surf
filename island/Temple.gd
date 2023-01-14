@@ -1,5 +1,5 @@
 extends Node3D
-
+class_name Temple
 
 var score: int = 0
 var time: float = 0.0
@@ -10,13 +10,13 @@ var is_exploded: bool = false
 @export var explode_at: int = 150
 @export var explosion_scene: PackedScene = preload("res://island/FunnyExplosion.tscn")
 
-@onready var player: Player = Singletons.player
 @onready var prayer_area: Area3D = $PrayerArea
 @onready var pineglasses: MeshInstance3D = $Pineglasses
 @onready var pineglasses_sound: AudioStreamPlayer3D = $Pineglasses/Growth
 
 
 func try_to_collect_fruit():
+	var player = Singletons.player
 	if prayer_area.overlaps_body(player):
 		if player.collected_fruit > 0:
 			if not pineglasses_sound.playing:
@@ -49,11 +49,7 @@ func try_to_explode():
 func win():
 	print("YOU WIN!")
 	print("Time: ", time)
-	Singletons.should_upload = true
-	Singletons.time = time
-	$"/root/BaseScene".move_to_menu()
-	
-	# get_tree().change_scene_to_file("res://base/BaseScene.tscn")
+	$"/root/BaseScene/ScoreboardContainer".upload_score(time)
 	queue_free()
 
 

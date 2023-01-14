@@ -9,6 +9,7 @@ var noiseRot := Vector3.ZERO
 var noiseCount := 0
 @export var noiseAmp := 10.0
 @export var noiseFreq := 100.0
+@onready var camera = $Viewport/CameraViewportContainer/GameViewport/Camera
 
 var mouseRot := Vector2.ZERO
 
@@ -23,3 +24,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		mouseRot = event.relative
+		
+
+func _physics_process(_delta):
+	camera.global_transform = global_transform

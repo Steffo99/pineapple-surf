@@ -1,24 +1,22 @@
-[gd_scene format=3 uid="uid://b7h36f4ai0qmq"]
+[gd_scene load_steps=2 format=3 uid="uid://b7h36f4ai0qmq"]
 
-[node name="MarginContainer" type="MarginContainer"]
+[ext_resource type="Script" path="res://menu/ScoreBox.gd" id="1_exul7"]
+
+[node name="ScoreBox" type="MarginContainer"]
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 5
+script = ExtResource("1_exul7")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = 5.0
-offset_right = 115.0
-offset_bottom = 26.0
+layout_mode = 2
 alignment = 1
 
 [node name="Name" type="Label" parent="HBoxContainer"]
-offset_right = 46.0
-offset_bottom = 26.0
+layout_mode = 2
 size_flags_horizontal = 2
 text = "Steffo"
 
 [node name="Score" type="Label" parent="HBoxContainer"]
-offset_left = 50.0
-offset_right = 110.0
-offset_bottom = 26.0
+layout_mode = 2
 size_flags_horizontal = 10
 text = "1512.50"
