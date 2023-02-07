@@ -5,13 +5,13 @@ _Bunnyhopping, retro-looking, first person seed shooter_
 
 ## Ludum Dare 51: Compo entry
 
-[![Overall: 3.6](https://img.shields.io/badge/overall-yellowgreen-lightgrey) 
-![Fun: 3.6](https://img.shields.io/badge/fun-yellowgreen-lightgrey) 
-![Innovation: 3.3](https://img.shields.io/badge/innovation-yellowgreen-lightgrey) 
-![Theme: 4.0](https://img.shields.io/badge/theme-green-lightgrey) 
-![Graphics: 3.5](https://img.shields.io/badge/graphics-yellowgreen-lightgrey) 
-![Humor: 3.5](https://img.shields.io/badge/humor-yellowgreen-lightgrey)
-![Mood: 3.3](https://img.shields.io/badge/mood-yellowgreen-lightgrey)](https://ldjam.com/events/ludum-dare/52/pineapple-surf)
+[![Overall: 3.6](https://img.shields.io/badge/overall-3.6-yellowgreen) 
+![Fun: 3.6](https://img.shields.io/badge/fun-3.6-yellowgreen) 
+![Innovation: 3.3](https://img.shields.io/badge/innovation-3.3-yellowgreen) 
+![Theme: 4.0](https://img.shields.io/badge/theme-4.0-green) 
+![Graphics: 3.5](https://img.shields.io/badge/graphics-3.5-yellowgreen) 
+![Humor: 3.5](https://img.shields.io/badge/humor-3.5-yellowgreen)
+![Mood: 3.3](https://img.shields.io/badge/mood-3.3-yellowgreen)](https://ldjam.com/events/ludum-dare/52/pineapple-surf)
 
 
 ## About
