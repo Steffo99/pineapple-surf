@@ -8,3 +8,5 @@ available-assets/
 
 # macOS shenanigans
 .DS_Store
+
+.directory
