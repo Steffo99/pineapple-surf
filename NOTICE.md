@@ -1,4 +1,4 @@
-# Licenses
+# Licensing notices
 
 ## Fonts
 
